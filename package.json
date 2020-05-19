@@ -1,0 +1,31 @@
+{
+  "name": "rpg-game",
+  "version": "1.0.0",
+  "description": "RPG-game",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macnick/RPG-game.git"
+  },
+  "keywords": [
+    "RPG",
+    "game",
+    "Phaser",
+    "Javascript"
+  ],
+  "author": "Nick Haralampopoulos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macnick/RPG-game/issues"
+  },
+  "homepage": "https://github.com/macnick/RPG-game#readme"
+}
