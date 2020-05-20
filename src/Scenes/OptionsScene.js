@@ -41,7 +41,7 @@ export default class OptionsScene extends Phaser.Scene {
       500,
       'blueButton1',
       'blueButton2',
-      'Menu',
+      'Menus',
       'Title'
     );
 
