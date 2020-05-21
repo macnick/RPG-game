@@ -4,14 +4,27 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 
 ## Table of Contents
 
-- [About](#About)
-- Game
+- [About this project](#About)
+- About this Game
 - How to Play
+- Design
+- Scenes
 
 ### About
-### Requirements
 
+### Game
+
+### How to Play
+
+### Design
+
+### Technologies Used
 We need [Node.js](https://nodejs.org) to install and run scripts.
+
+### Live version
+
+### Get a Copy
+
 
 ## Install and run
 
