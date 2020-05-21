@@ -14,7 +14,7 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 The Objective of this project is to build a simple turn-based RPG game with scoring system, using JavaScript ES6, Phaser 3 framework and other modern technologies. See [technologies used](#Technologies Used) for more info. I had to design the story, gameplay, the scenes and the scoring system. [Up](#Table-of-Contents)
 
 ### Story
-You are the leader of a small team of warriors. You got a message that your town is in danger from the horde of Orcs. You have to be there in 2 days. But the safest road takes 7 days. That means you have to pass through the *Dark Forest*. [Up](#Table-of-Contents)
+You are the leader of a small team of warriors. You got a message that your town is in danger from the horde of Orcs. You have to be there in 2 days. But the safest road takes 7 days. The only chance to make it on time is to pass through the dangerous **Dark Forest**. It will be difficult but you and your brave warriors might have a chance. [Up](#Table-of-Contents)
 
 ### How to Play
 
