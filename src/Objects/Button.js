@@ -29,6 +29,7 @@ export default class Button extends Phaser.GameObjects.Container {
       'pointerover',
       function () {
         this.button.setTexture(key2);
+        this.button.y += 3;
       }.bind(this)
     );
 
@@ -36,6 +37,7 @@ export default class Button extends Phaser.GameObjects.Container {
       'pointerout',
       function () {
         this.button.setTexture(key1);
+        this.button.y -= 3;
       }.bind(this)
     );
 

@@ -11,9 +11,9 @@ export default class OptionsScene extends Phaser.Scene {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
 
-    this.text = this.add.text(300, 200, 'Options', { fontSize: 40 });
-    this.musicButton = this.add.image(270, 250, 'checkedBox');
-    this.musicText = this.add.text(320, 250, 'Music Enabled', { fontSize: 24 });
+    this.text = this.add.text(300, 190, 'Options', { fontSize: 40 });
+    this.musicButton = this.add.image(270, 280, 'checkedBox');
+    this.musicText = this.add.text(320, 270, 'Music Enabled', { fontSize: 24 });
 
     this.soundButton = this.add.image(270, 350, 'checkedBox');
     this.soundText = this.add.text(320, 340, 'Sound Enabled', { fontSize: 24 });
@@ -37,15 +37,7 @@ export default class OptionsScene extends Phaser.Scene {
       }.bind(this)
     );
 
-    this.menuButton = new Button(
-      this,
-      400,
-      500,
-      'blueButton1',
-      'blueButton2',
-      'Menu',
-      'Title'
-    );
+    this.menuButton = new Button(this, 400, 500, 'btn', 'btn', 'Menu', 'Title');
 
     this.updateAudio();
   }
