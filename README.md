@@ -13,6 +13,7 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 - [Live Version](#Live-version)
 - [Get A Copy](#Get-A-Copy)
   - [Install and Run](#Install-and-run)
+- [Acknowledgements](#copyright)
 
 ### Objective
 
@@ -58,3 +59,7 @@ Run next commands in your terminal:
 
 =======
 [Up](#Table-of-Contents)
+
+## Copyright - Acknowlegdements
+
+Dark Forest Background image By Zeyu Ren 任泽宇
