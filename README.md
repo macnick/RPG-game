@@ -19,7 +19,7 @@ The Objective of this project is to build a simple turn-based RPG game with scor
 [Up](#Table-of-Contents)
 
 ### Story
-You are the leader of a small team of warriors. You got a message that your town is in danger from the horde of Orcs. You have to be there in 2 days. But the safest road takes 7 days. The only chance to make it on time is to pass through the dangerous **Dark Forest**. It will be difficult but you and your brave warriors might have a chance. 
+You are the leader of a small team of warriors. You got a message that your town is in danger from the horde of Orcs. You have to be there in 2 days. If you take the safe road you will there in 7 days. That is too long and your town will be lost. The only chance to make it on time is to pass through the dangerous **Dark Forest**. It will be difficult but you and your brave warriors might have a chance. 
 [Up](#Table-of-Contents)
 
 ### How to Play
