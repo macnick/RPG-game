@@ -20,7 +20,6 @@ export default class TitleScene extends Phaser.Scene {
       'Play',
       'Game'
     );
-    // this.gameButton.scale = 0.75;
     // Options
     this.gameButton = new Button(
       this,
@@ -31,7 +30,6 @@ export default class TitleScene extends Phaser.Scene {
       'Options',
       'Options'
     );
-
     // Credits
     this.gameButton = new Button(
       this,
@@ -41,6 +39,17 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'Credits',
       'Credits'
+    );
+
+    // LeaderBoard
+    this.gameButton = new Button(
+      this,
+      config.width / 2,
+      config.height / 2 + 180,
+      'btn',
+      'btn',
+      'LeaderBoard',
+      ''
     );
 
     this.model = this.sys.game.globals.model;

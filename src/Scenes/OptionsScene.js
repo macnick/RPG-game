@@ -7,16 +7,18 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
+    let title = { fontFamily: 'Georgia', fontSize: 40 };
+    let selection = { fontFamily: 'Tahoma', fontSize: 24 };
     this.model = this.sys.game.globals.model;
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
 
-    this.text = this.add.text(300, 190, 'Options', { fontSize: 40 });
+    this.text = this.add.text(300, 190, 'Options', title);
     this.musicButton = this.add.image(270, 280, 'checkedBox');
-    this.musicText = this.add.text(320, 270, 'Music Enabled', { fontSize: 24 });
+    this.musicText = this.add.text(320, 270, 'Music Enabled', selection);
 
     this.soundButton = this.add.image(270, 350, 'checkedBox');
-    this.soundText = this.add.text(320, 340, 'Sound Enabled', { fontSize: 24 });
+    this.soundText = this.add.text(320, 340, 'Sound Enabled', selection);
 
     this.musicButton.setInteractive();
     this.soundButton.setInteractive();
@@ -37,7 +39,7 @@ export default class OptionsScene extends Phaser.Scene {
       }.bind(this)
     );
 
-    this.menuButton = new Button(this, 400, 500, 'btn', 'btn', 'Menu', 'Title');
+    this.menuButton = new Button(this, 400, 480, 'btn', 'btn', 'Menu', 'Title');
 
     this.updateAudio();
   }
