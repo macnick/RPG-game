@@ -10,6 +10,9 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 - [Design](#Design)
 - [Scenes](#Scenes)
 - [Technologies Used](#Technologies-Used)
+- [Live Version](#Live-version)
+- [Get A Copy](#Get-A-Copy)
+  - [Install and Run](#Install-and-run)
 
 ### Objective
 The Objective of this project is to build a simple turn-based RPG game with scoring system, using JavaScript ES6, Phaser 3 framework and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to design the story, gameplay, the scenes and the scoring system.
