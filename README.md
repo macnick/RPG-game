@@ -39,4 +39,4 @@ Run next commands in your terminal:
 | `npm start`   | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
 
 =======
-[Up](#Table)
+[Up](#Table%20of%20Contents)
