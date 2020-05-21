@@ -7,6 +7,8 @@ export default class CreditsScene extends Phaser.Scene {
   }
 
   create() {
+    this.back = this.add.image(400, 300, 'background');
+
     this.creditsText = this.add.text(0, 0, 'Credits', {
       fontSize: '32px',
       fill: '#fff',
@@ -17,12 +19,12 @@ export default class CreditsScene extends Phaser.Scene {
       'Created By: Placeholder\n\nNick Haralampopoulos\n\nThe Good Co',
       { fontSize: '26px', fill: '#fff' }
     );
-    this.zone = this.add.zone(
-      config.width / 2,
-      config.height / 2,
-      config.width,
-      config.height
-    );
+    // this.zone = this.add.zone(
+    //   config.width / 2,
+    //   config.height / 2,
+    //   config.width,
+    //   config.height
+    // );
 
     Phaser.Display.Align.In.Center(this.creditsText, this.zone);
 

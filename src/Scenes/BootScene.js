@@ -6,7 +6,8 @@ export default class BootScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('logo', 'assets/zenva_logo.png');
+    this.load.image('title', 'assets/images/title.png');
+    this.load.image('background', 'assets/images/basicBack.png');
   }
 
   create() {
