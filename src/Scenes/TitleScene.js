@@ -49,7 +49,7 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'btn',
       'LeaderBoard',
-      ''
+      'Battle'
     );
 
     this.model = this.sys.game.globals.model;
@@ -59,5 +59,8 @@ export default class TitleScene extends Phaser.Scene {
       this.model.bgMusicPlaying = true;
       this.sys.game.globals.bgMusic = this.bgMusic;
     }
+
+    // remove line below it is only for testing
+    // this.scene.start('Battle');
   }
 }

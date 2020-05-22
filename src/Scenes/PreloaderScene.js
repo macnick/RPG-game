@@ -13,7 +13,14 @@ export default class PreloaderScene extends Phaser.Scene {
     // add logo image
     this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
-
+    this.load.image('tiles', 'assets/images/map/spritesheet.png');
+    this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
+    this.load.spritesheet('player', 'assets/images/RPG_assets.png', {
+      frameWidth: 16,
+      frameHeight: 16,
+    });
+    this.load.image('dragonblue', 'assets/images/dragonblue.png');
+    this.load.image('dragonorrange', 'assets/images/dragonorrange.png');
     // display progress bar
     var progressBar = this.add.graphics();
     var progressBox = this.add.graphics();
