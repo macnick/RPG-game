@@ -8,7 +8,6 @@ export default class CreditsScene extends Phaser.Scene {
 
   create() {
     this.back = this.add.image(400, 300, 'background');
-
     this.creditsText = this.add.text(0, 0, 'Credits', {
       fontSize: '32px',
       fill: '#fff',

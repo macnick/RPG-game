@@ -48,7 +48,7 @@ export default class TitleScene extends Phaser.Scene {
       config.height / 2 + 180,
       'btn',
       'btn',
-      'LeaderBoard',
+      'LeaderBoard-battle',
       'Battle'
     );
 
@@ -59,8 +59,5 @@ export default class TitleScene extends Phaser.Scene {
       this.model.bgMusicPlaying = true;
       this.sys.game.globals.bgMusic = this.bgMusic;
     }
-
-    // remove line below it is only for testing
-    // this.scene.start('Battle');
   }
 }

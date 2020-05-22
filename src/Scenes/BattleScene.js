@@ -1,4 +1,5 @@
 import 'phaser';
+import config from '../Config/config';
 
 export default class BattleScene extends Phaser.Scene {
   constructor() {
@@ -70,7 +71,7 @@ export default class BattleScene extends Phaser.Scene {
     this.units = this.heroes.concat(this.enemies);
 
     // Run UI Scene at the same time
-    this.scene.launch('UIScene');
+    this.scene.launch('UI');
   }
 }
 
@@ -116,6 +117,6 @@ const PlayerCharacter = new Phaser.Class({
     // flip the image so I don't have to edit it manually
     this.flipX = true;
 
-    this.setScale(2);
+    this.setScale(3);
   },
 });

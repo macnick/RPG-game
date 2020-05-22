@@ -10,24 +10,31 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    this.sys.game.config.zoom = 2;
-    let map = this.make.tilemap({ key: 'map' });
+    let map = this.make.tilemap({ key: 'map' }); // original
     let tiles = map.addTilesetImage('spritesheet', 'tiles');
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
-
+    grass.setScale(2);
+    obstacles.setScale(2);
+    console.log('map', map);
+    console.log('tiles', tiles);
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
-    this.physics.world.bounds.width = map.widthInPixels;
-    this.physics.world.bounds.height = map.heightInPixels;
+    this.physics.world.bounds.width = map.widthInPixels * 2;
+    this.physics.world.bounds.height = map.heightInPixels * 2;
     this.player.setCollideWorldBounds(true);
     this.physics.add.collider(this.player, obstacles);
 
     this.cursors = this.input.keyboard.createCursorKeys();
     // camera follow
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.cameras.main.setBounds(
+      0,
+      0,
+      map.widthInPixels * 2,
+      map.heightInPixels * 2
+    );
     this.cameras.main.startFollow(this.player);
-    this.cameras.main.roundPixels = true;
+    // this.cameras.main.roundPixels = true;
 
     //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
     this.anims.create({
@@ -86,6 +93,7 @@ export default class GameScene extends Phaser.Scene {
   onMeetEnemy(player, zone) {
     console.log('Met an enemy');
     zone.destroy();
+    this.scene.start('Title');
     // this.cameras.fade(1000);
     // start battle
   }
@@ -114,17 +122,5 @@ export default class GameScene extends Phaser.Scene {
     } else {
       this.player.anims.stop();
     }
-
-    // if (this.cursors.left.isDown) {
-    //   this.player.anims.play('left', true);
-    // } else if (this.cursors.right.isDown) {
-    //   this.player.anims.play('right', true);
-    // } else if (this.cursors.up.isDown) {
-    //   this.player.anims.play('up', true);
-    // } else if (this.cursors.down.isDown) {
-    //   this.player.anims.play('down', true);
-    // } else {
-    //   this.player.anims.stop();
-    // }
   }
 }
