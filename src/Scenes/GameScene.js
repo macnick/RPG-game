@@ -10,15 +10,18 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    let map = this.make.tilemap({ key: 'map' }); // original
-    let tiles = map.addTilesetImage('spritesheet', 'tiles');
+    console.log('in gamescene');
+    const map = this.make.tilemap({ key: 'map' });
+    console.log('map', map);
+    // let tiles = map.addTilesetImage('spritesheet', 'tiles');
+    const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
+    console.log('tiles', tiles);
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
     // grass.setScale(2);
     // obstacles.setScale(2);
-    // console.log('map', map);
-    // console.log('tiles', tiles);
+
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
     this.physics.world.bounds.width = map.widthInPixels;
     this.physics.world.bounds.height = map.heightInPixels;

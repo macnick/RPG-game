@@ -16,7 +16,8 @@ export default class PreloaderScene extends Phaser.Scene {
     // this.load.image('tiles', 'assets/images/map/spritesheet.png');
     this.load.image('tiles', 'assets/images/map/forest_tileset-32x32.png');
     // this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
-    this.load.tilemapTiledJSON('map', 'assets/images/map/forest_map.json');
+    this.load.tilemapTiledJSON('map', 'assets/images/map/dark_forest.json');
+
     this.load.spritesheet('player', 'assets/images/RPG_assets.png', {
       frameWidth: 16,
       frameHeight: 16,
@@ -93,8 +94,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
 
     // load assets needed in our game
-    this.load.image('blueButton1', 'assets/ui/blue_button02.png');
-    this.load.image('blueButton2', 'assets/ui/blue_button03.png');
+    // this.load.image('blueButton1', 'assets/ui/blue_button02.png');
+    // this.load.image('blueButton2', 'assets/ui/blue_button03.png');
     this.load.image('btn', 'assets/ui/button_small.png');
     this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/ui/grey_box.png');
