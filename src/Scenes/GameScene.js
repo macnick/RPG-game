@@ -15,26 +15,21 @@ export default class GameScene extends Phaser.Scene {
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
-    grass.setScale(2);
-    obstacles.setScale(2);
-    console.log('map', map);
-    console.log('tiles', tiles);
+    // grass.setScale(2);
+    // obstacles.setScale(2);
+    // console.log('map', map);
+    // console.log('tiles', tiles);
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
-    this.physics.world.bounds.width = map.widthInPixels * 2;
-    this.physics.world.bounds.height = map.heightInPixels * 2;
+    this.physics.world.bounds.width = map.widthInPixels;
+    this.physics.world.bounds.height = map.heightInPixels;
     this.player.setCollideWorldBounds(true);
     this.physics.add.collider(this.player, obstacles);
 
     this.cursors = this.input.keyboard.createCursorKeys();
     // camera follow
-    this.cameras.main.setBounds(
-      0,
-      0,
-      map.widthInPixels * 2,
-      map.heightInPixels * 2
-    );
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.player);
-    // this.cameras.main.roundPixels = true;
+    this.cameras.main.roundPixels = true;
 
     //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
     this.anims.create({

@@ -60,7 +60,7 @@ Run next commands in your terminal:
 =======
 [Up](#Table-of-Contents)
 
-## Copyright - Acknowlegdments
+## Copyright - Acknowlegements
 
-Dark Forest Background image By Zeyu Ren 任泽宇
-Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](#https://opengameart.org/)
+- Dark Forest Background image By Zeyu Ren 任泽宇
+- Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](#https://opengameart.org/)

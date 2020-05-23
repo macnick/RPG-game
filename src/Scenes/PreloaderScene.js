@@ -13,8 +13,10 @@ export default class PreloaderScene extends Phaser.Scene {
     // add logo image
     this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
-    this.load.image('tiles', 'assets/images/map/spritesheet.png');
-    this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
+    // this.load.image('tiles', 'assets/images/map/spritesheet.png');
+    this.load.image('tiles', 'assets/images/map/forest_tileset-32x32.png');
+    // this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
+    this.load.tilemapTiledJSON('map', 'assets/images/map/forest_map.json');
     this.load.spritesheet('player', 'assets/images/RPG_assets.png', {
       frameWidth: 16,
       frameHeight: 16,
