@@ -1,6 +1,11 @@
 { "compressionlevel":-1,
  "editorsettings":
     {
+     "chunksize":
+        {
+         "height":32,
+         "width":32
+        },
      "export":
         {
          "format":"json",
