@@ -18,10 +18,15 @@ export default class PreloaderScene extends Phaser.Scene {
     // this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
     this.load.tilemapTiledJSON('map', 'assets/images/map/dark_forest.json');
 
-    this.load.spritesheet('player', 'assets/images/RPG_assets.png', {
-      frameWidth: 16,
-      frameHeight: 16,
-    });
+    this.load.spritesheet(
+      'player',
+      'assets//images/RPGCharacterSprites32x32.png',
+      {
+        frameWidth: 32,
+        frameHeight: 32,
+      }
+    );
+
     this.load.image('dragonblue', 'assets/images/dragonblue.png');
     this.load.image('dragonorrange', 'assets/images/dragonorrange.png');
     // display progress bar

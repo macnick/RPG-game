@@ -10,7 +10,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
-    console.log('in gamescene');
     const map = this.make.tilemap({ key: 'map' });
     console.log('map', map);
     // let tiles = map.addTilesetImage('spritesheet', 'tiles');
@@ -38,17 +37,15 @@ export default class GameScene extends Phaser.Scene {
     this.anims.create({
       key: 'left',
       frames: this.anims.generateFrameNumbers('player', {
-        frames: [1, 7, 1, 13],
+        frames: [69, 68, 69, 70],
       }),
       frameRate: 10,
       repeat: -1,
     });
-
-    // animation with key 'right'
     this.anims.create({
       key: 'right',
       frames: this.anims.generateFrameNumbers('player', {
-        frames: [1, 7, 1, 13],
+        frames: [69, 68, 69, 70],
       }),
       frameRate: 10,
       repeat: -1,
@@ -56,7 +53,7 @@ export default class GameScene extends Phaser.Scene {
     this.anims.create({
       key: 'up',
       frames: this.anims.generateFrameNumbers('player', {
-        frames: [2, 8, 2, 14],
+        frames: [65, 64, 65, 66],
       }),
       frameRate: 10,
       repeat: -1,
@@ -64,7 +61,7 @@ export default class GameScene extends Phaser.Scene {
     this.anims.create({
       key: 'down',
       frames: this.anims.generateFrameNumbers('player', {
-        frames: [0, 6, 0, 12],
+        frames: [62, 60, 62, 61],
       }),
       frameRate: 10,
       repeat: -1,
@@ -102,20 +99,26 @@ export default class GameScene extends Phaser.Scene {
     // Horizontal movement
     if (this.cursors.left.isDown) {
       this.player.body.setVelocityX(-80);
-      this.player.flipX = true;
-      this.player.anims.play('left', true);
     } else if (this.cursors.right.isDown) {
       this.player.body.setVelocityX(80);
-      this.player.flipX = false;
-      this.player.anims.play('right', true);
     }
-
     // Vertical movement
     if (this.cursors.up.isDown) {
       this.player.body.setVelocityY(-80);
-      this.player.anims.play('up', true);
     } else if (this.cursors.down.isDown) {
       this.player.body.setVelocityY(80);
+    }
+
+    // Update the animation last and give left/right animations precedence over up/down animations
+    if (this.cursors.left.isDown) {
+      this.player.anims.play('left', true);
+      this.player.flipX = true;
+    } else if (this.cursors.right.isDown) {
+      this.player.anims.play('right', true);
+      this.player.flipX = false;
+    } else if (this.cursors.up.isDown) {
+      this.player.anims.play('up', true);
+    } else if (this.cursors.down.isDown) {
       this.player.anims.play('down', true);
     } else {
       this.player.anims.stop();
