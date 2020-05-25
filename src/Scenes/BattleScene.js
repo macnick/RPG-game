@@ -25,18 +25,18 @@ class BattleScene extends Phaser.Scene {
     );
     this.add.existing(warrior);
 
-    // player character - mage
-    const mage = new PlayerCharacter(
+    // player character - knight
+    const knight = new PlayerCharacter(
       this,
       630,
       200,
       'player',
       57,
-      'Mage',
+      'Knight',
       80,
       8
     );
-    this.add.existing(mage);
+    this.add.existing(knight);
 
     // player character beast
     const beast = new PlayerCharacter(
@@ -76,7 +76,7 @@ class BattleScene extends Phaser.Scene {
     this.add.existing(dragonOrange);
 
     // array with heroes
-    this.heroes = [warrior, mage, beast];
+    this.heroes = [warrior, knight, beast];
     // array with enemies
     this.enemies = [dragonblue, dragonOrange];
     // array with both parties, who will attack
@@ -242,7 +242,8 @@ var MenuItem = new Phaser.Class({
     Phaser.GameObjects.Text.call(this, scene, x, y, text, {
       color: '#ffffff',
       align: 'left',
-      fontSize: 15,
+      fontFamily: 'Georgia',
+      fontSize: 30,
     });
   },
 
@@ -275,7 +276,7 @@ var Menu = new Phaser.Class({
   addMenuItem: function (unit) {
     var menuItem = new MenuItem(
       0,
-      this.menuItems.length * 20,
+      this.menuItems.length * 40,
       unit,
       this.scene
     );
@@ -382,23 +383,20 @@ class UIScene extends Phaser.Scene {
   }
 
   create() {
-    // draw some background for the menu
     this.graphics = this.add.graphics();
     this.graphics.lineStyle(1, 0xffffff);
     this.graphics.fillStyle(0x031f4c, 1);
-    this.graphics.strokeRect(2, 150, 90, 100);
-    this.graphics.fillRect(2, 150, 90, 100);
-    this.graphics.strokeRect(95, 150, 90, 100);
-    this.graphics.fillRect(95, 150, 90, 100);
-    this.graphics.strokeRect(188, 150, 130, 100);
-    this.graphics.fillRect(188, 150, 130, 100);
+    this.graphics.strokeRect(2, 398, 282, 200);
+    this.graphics.fillRect(2, 398, 282, 200);
+    this.graphics.strokeRect(290, 398, 212, 200);
+    this.graphics.fillRect(290, 398, 212, 200);
+    this.graphics.strokeRect(508, 398, 290, 200);
+    this.graphics.fillRect(508, 398, 290, 200);
     // basic container to hold all menus
     this.menus = this.add.container();
-
-    this.heroesMenu = new HeroesMenu(195, 153, this);
-    this.actionsMenu = new ActionsMenu(100, 153, this);
-    this.enemiesMenu = new EnemiesMenu(8, 153, this);
-
+    this.enemiesMenu = new EnemiesMenu(32, 410, this);
+    this.actionsMenu = new ActionsMenu(350, 410, this);
+    this.heroesMenu = new HeroesMenu(540, 410, this);
     // the currently selected menu
     this.currentMenu = this.actionsMenu;
 
@@ -427,7 +425,6 @@ class UIScene extends Phaser.Scene {
     this.sys.events.on('wake', this.createMenu, this);
 
     // the message describing the current action
-    console.log('line 435', this.battleScene.events);
     this.message = new Message(this, this.battleScene.events);
     this.add.existing(this.message);
 
@@ -499,7 +496,8 @@ var Message = new Phaser.Class({
     this.text = new Phaser.GameObjects.Text(scene, 0, 0, '', {
       color: '#ffffff',
       align: 'center',
-      fontSize: 13,
+      fontFamily: 'Georgia',
+      fontSize: 26,
       wordWrap: { width: 170, useAdvancedWrap: true },
     });
     this.add(this.text);
