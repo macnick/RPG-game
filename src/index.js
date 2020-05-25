@@ -2,7 +2,7 @@ import 'phaser';
 import config from './Config/config';
 import GameScene from './Scenes/GameScene';
 import BattleScene from './Scenes/BattleScene';
-// import UIScene from './Scenes/UIScene';
+import UIScene from './Scenes/UIScene';
 import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';
@@ -22,7 +22,7 @@ class Game extends Phaser.Game {
     this.scene.add('Credits', CreditsScene);
     this.scene.add('Game', GameScene);
     this.scene.add('Battle', BattleScene);
-    // this.scene.add('UIScene', UIScene);
+    this.scene.add('UI', UIScene);
     this.scene.start('Boot');
   }
 }
