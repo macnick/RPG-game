@@ -1,6 +1,6 @@
 import 'phaser';
-import OptionsScene from '../Scenes/OptionsScene';
-import GameScene from '../Scenes/GameScene';
+// import OptionsScene from '../Scenes/OptionsScene';
+// import GameScene from '../Scenes/GameScene';
 
 export default {
   type: Phaser.AUTO,
@@ -15,14 +15,4 @@ export default {
       debug: true,
     },
   },
-  scene: [
-    BootScene,
-    PreloaderScene,
-    TitleScene,
-    OptionsScene,
-    CreditsScene,
-    GameScene,
-    BattleScene,
-    UIScene,
-  ],
 };

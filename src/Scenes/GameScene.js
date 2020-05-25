@@ -14,12 +14,13 @@ export default class GameScene extends Phaser.Scene {
     // console.log('map', map);
     // let tiles = map.addTilesetImage('spritesheet', 'tiles');
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
-    console.log('tiles', tiles);
+    // console.log('tiles', tiles);
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
 
-    this.player = this.physics.add.sprite(50, 100, 'player', 6);
+    this.player = this.physics.add.sprite(64, 64, 'player', 63);
+    this.physics.add.sprite();
     this.physics.world.bounds.width = map.widthInPixels;
     this.physics.world.bounds.height = map.heightInPixels;
     this.player.setCollideWorldBounds(true);
@@ -68,12 +69,21 @@ export default class GameScene extends Phaser.Scene {
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
-    for (var i = 0; i < 30; i++) {
-      var x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
-      var y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
-      // parameters are x, y, width, height
-      this.spawns.create(x, y, 20, 20);
-    }
+    const dangerZones = [
+      [980, 640],
+      [480, 864],
+      [800, 768],
+      [832, 224],
+      [352, 288],
+      [256, 448],
+      [640, 672],
+      [768, 960],
+    ];
+
+    dangerZones.forEach(([x, y]) => {
+      this.spawns.create(x, y, 96, 96);
+    });
+
     this.physics.add.overlap(
       this.player,
       this.spawns,
@@ -85,8 +95,8 @@ export default class GameScene extends Phaser.Scene {
 
   onMeetEnemy(player, zone) {
     zone.destroy();
-    this.scene.start('Title');
-    // this.cameras.fade(1000);
+
+    this.scene.start('Battle');
     // start battle
   }
 
