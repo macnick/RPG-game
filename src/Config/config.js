@@ -1,6 +1,4 @@
 import 'phaser';
-// import OptionsScene from '../Scenes/OptionsScene';
-// import GameScene from '../Scenes/GameScene';
 
 export default {
   type: Phaser.AUTO,

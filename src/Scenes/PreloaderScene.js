@@ -8,7 +8,6 @@ export default class PreloaderScene extends Phaser.Scene {
   init() {}
 
   preload() {
-    // add logo image
     this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
     // this.load.image('tiles', 'assets/images/map/spritesheet.png');
