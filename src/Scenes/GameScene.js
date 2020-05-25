@@ -11,15 +11,13 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     const map = this.make.tilemap({ key: 'map' });
-    console.log('map', map);
+    // console.log('map', map);
     // let tiles = map.addTilesetImage('spritesheet', 'tiles');
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
     console.log('tiles', tiles);
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
-    // grass.setScale(2);
-    // obstacles.setScale(2);
 
     this.player = this.physics.add.sprite(50, 100, 'player', 6);
     this.physics.world.bounds.width = map.widthInPixels;
@@ -86,7 +84,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   onMeetEnemy(player, zone) {
-    console.log('Met an enemy');
     zone.destroy();
     this.scene.start('Title');
     // this.cameras.fade(1000);

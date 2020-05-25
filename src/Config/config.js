@@ -15,13 +15,14 @@ export default {
       debug: true,
     },
   },
-  // scene: [
-  //   BootScene,
-  //   PreloaderScene,
-  //   TitleScene,
-  //   OptionsScene,
-  //   GameScene,
-  //   BattleScene,
-  //   WorldScene,
-  // ],
+  scene: [
+    BootScene,
+    PreloaderScene,
+    TitleScene,
+    OptionsScene,
+    CreditsScene,
+    GameScene,
+    BattleScene,
+    UIScene,
+  ],
 };
