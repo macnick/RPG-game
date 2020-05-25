@@ -2,7 +2,7 @@ import 'phaser';
 import config from './Config/config';
 import GameScene from './Scenes/GameScene';
 import BattleScene from './Scenes/BattleScene';
-// import UI from './Scenes/UIScene';
+// import UIScene from './Scenes/UIScene';
 import BootScene from './Scenes/BootScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import TitleScene from './Scenes/TitleScene';

@@ -6,6 +6,7 @@ export default class BattleScene extends Phaser.Scene {
   }
 
   create() {
+    console.log('BattleScene launched');
     this.back = this.add.image(400, 300, 'background');
     this.startBattle();
     this.sys.events.on('wake', this.startBattle, this);

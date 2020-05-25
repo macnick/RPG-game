@@ -5,9 +5,7 @@ export default class PreloaderScene extends Phaser.Scene {
     super('Preloader');
   }
 
-  init() {
-    this.readyCount = 0;
-  }
+  init() {}
 
   preload() {
     // add logo image
@@ -96,8 +94,6 @@ export default class PreloaderScene extends Phaser.Scene {
       }.bind(this)
     );
 
-    this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
-
     // load assets needed in our game
     this.load.image('btn', 'assets/ui/button_small.png');
     this.load.image('phaserLogo', 'assets/logo.png');
@@ -107,10 +103,6 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   ready() {
-    this.scene.start('Battle');
-    this.readyCount++;
-    if (this.readyCount === 2) {
-      this.scene.start('Title');
-    }
+    this.scene.start('Title');
   }
 }
