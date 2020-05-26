@@ -77,6 +77,7 @@ export default class GameScene extends Phaser.Scene {
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
+
     const dangerZones = [
       [980, 640],
       [480, 864],
@@ -86,9 +87,12 @@ export default class GameScene extends Phaser.Scene {
       [256, 448],
       [640, 672],
       [768, 960],
+      [520, 390],
+      [440, 600],
+      [360, 740],
     ];
 
-    dangerZones.forEach(([x, y]) => {
+    dangerZones.forEach(([x, y], i) => {
       this.spawns.create(x, y, 96, 96);
     });
 
@@ -101,8 +105,9 @@ export default class GameScene extends Phaser.Scene {
     );
   }
 
-  onMeetEnemy(player, zone) {
-    zone.destroy();
+  onMeetEnemy(zone) {
+    console.log(zone);
+    // zone.destroy();
 
     this.scene.start('Battle');
     // start battle
@@ -138,5 +143,6 @@ export default class GameScene extends Phaser.Scene {
     } else {
       this.player.anims.stop();
     }
+    console.log(this.player.x, this.player.y);
   }
 }

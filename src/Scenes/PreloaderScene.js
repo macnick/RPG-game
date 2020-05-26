@@ -31,6 +31,18 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 120,
       frameHeight: 100,
     });
+    this.load.spritesheet('mage1', 'assets/images/mage-1-85x94.png', {
+      frameWidth: 85,
+      frameHeight: 94,
+    });
+    this.load.spritesheet('mage2', 'assets/images/mage-2-122x110.png', {
+      frameWidth: 122,
+      frameHeight: 110,
+    });
+    this.load.spritesheet('mage3', 'assets/images/mage-3-87x110.png', {
+      frameWidth: 87,
+      frameHeight: 110,
+    });
 
     // display progress bar
     var progressBar = this.add.graphics();
