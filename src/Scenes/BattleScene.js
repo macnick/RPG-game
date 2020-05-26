@@ -82,13 +82,12 @@ class BattleScene extends Phaser.Scene {
     this.allEnemies = [gnu, andomalius, mage1, mage2, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
-      if (Math.random() > 0.5) {
+      if (Math.random() > 0.55) {
         this.add.existing(enemy);
         return enemy;
       }
     });
     console.log(this.enemies);
-    // this.add.existing(mage3);
     // array with heroes
     this.heroes = [warrior, knight, beast];
     // array with enemies
@@ -178,7 +177,7 @@ class BattleScene extends Phaser.Scene {
 }
 
 // base class for heroes and enemies
-var Unit = new Phaser.Class({
+const Unit = new Phaser.Class({
   Extends: Phaser.GameObjects.Sprite,
 
   initialize: function Unit(scene, x, y, texture, frame, type, hp, damage) {
@@ -495,7 +494,7 @@ class UIScene extends Phaser.Scene {
 }
 
 // the message class extends containter
-var Message = new Phaser.Class({
+const Message = new Phaser.Class({
   Extends: Phaser.GameObjects.Container,
 
   initialize: function Message(scene, events) {
@@ -523,7 +522,7 @@ var Message = new Phaser.Class({
     this.visible = true;
     if (this.hideEvent) this.hideEvent.remove(false);
     this.hideEvent = this.scene.time.addEvent({
-      delay: 2500,
+      delay: 2000,
       callback: this.hideMessage,
       callbackScope: this,
     });

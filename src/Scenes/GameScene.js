@@ -5,12 +5,9 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-  preload() {}
-
   create() {
     const map = this.make.tilemap({ key: 'map' });
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
-    // console.log('tiles', tiles);
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
@@ -27,18 +24,6 @@ export default class GameScene extends Phaser.Scene {
     );
     userName.setScrollFactor(0);
     scoreText.setScrollFactor(0);
-    this.player = this.physics.add.sprite(64, 64, 'player', 63);
-    this.physics.add.sprite();
-    this.physics.world.bounds.width = map.widthInPixels;
-    this.physics.world.bounds.height = map.heightInPixels;
-    this.player.setCollideWorldBounds(true);
-    this.physics.add.collider(this.player, obstacles);
-
-    this.cursors = this.input.keyboard.createCursorKeys();
-    // camera follow
-    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-    this.cameras.main.startFollow(this.player);
-    this.cameras.main.roundPixels = true;
 
     //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
     this.anims.create({
@@ -74,6 +59,19 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1,
     });
 
+    this.player = this.physics.add.sprite(64, 64, 'player', 63);
+    // this.physics.add.sprite();
+    this.physics.world.bounds.width = map.widthInPixels;
+    this.physics.world.bounds.height = map.heightInPixels;
+    this.player.setCollideWorldBounds(true);
+    this.physics.add.collider(this.player, obstacles);
+
+    this.cursors = this.input.keyboard.createCursorKeys();
+    // camera follow
+    this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+    this.cameras.main.startFollow(this.player);
+    this.cameras.main.roundPixels = true;
+
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
@@ -105,12 +103,18 @@ export default class GameScene extends Phaser.Scene {
     );
   }
 
-  onMeetEnemy(zone) {
-    console.log(zone);
-    // zone.destroy();
+  wake() {
+    this.cursors.left.reset();
+    this.cursors.right.reset();
+    this.cursors.up.reset();
+    this.cursors.down.reset();
+  }
 
-    this.scene.start('Battle');
+  onMeetEnemy(player, zone) {
+    zone.destroy();
+    this.input.stopPropagation();
     // start battle
+    this.scene.switch('Battle');
   }
 
   update(time, delta) {
@@ -143,6 +147,5 @@ export default class GameScene extends Phaser.Scene {
     } else {
       this.player.anims.stop();
     }
-    console.log(this.player.x, this.player.y);
   }
 }
