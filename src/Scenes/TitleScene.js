@@ -10,6 +10,12 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
+    let user = this.add.text(
+      config.width / 2,
+      20,
+      this.sys.game.globals.model.userName
+    );
+    user.setOrigin(0.5, 0.5);
     // Game
     this.gameButton = new Button(
       this,

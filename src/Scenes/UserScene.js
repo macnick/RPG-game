@@ -1,6 +1,5 @@
 import 'phaser';
 import config from '../Config/config';
-import Button from '../Objects/Button';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -28,19 +27,18 @@ export default class UserScene extends Phaser.Scene {
     });
     const style =
       'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff';
-    const btn = this.add.dom(400, 400, 'button', style, 'Play Now');
+    const btn = this.add.dom(390, 400, 'button', style, 'Play Now');
     btn.addListener('click');
 
     btn.on('click', (event) => {
-      console.log('input', input.node.value);
       if (input.node.value) {
-        this.welcome = text.setText('Welcome ' + input.node.value);
+        this.welcome = 'Welcome ' + input.node.value;
+        this.model = this.sys.game.globals.model;
+        this.model.userName = this.welcome;
         this.scene.start('Title');
       }
     });
   }
 
-  ready() {
-    // this.scene.start('Title');
-  }
+  ready() {}
 }
