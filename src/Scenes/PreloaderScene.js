@@ -23,9 +23,15 @@ export default class PreloaderScene extends Phaser.Scene {
         frameHeight: 32,
       }
     );
+    this.load.spritesheet('andomalius', 'assets/images/andromalius-57x88.png', {
+      frameWidth: 57,
+      frameHeight: 88,
+    });
+    this.load.spritesheet('gnu', 'assets/images/gnu-120x100.png', {
+      frameWidth: 120,
+      frameHeight: 100,
+    });
 
-    this.load.image('dragonblue', 'assets/images/dragonblue.png');
-    this.load.image('dragonorrange', 'assets/images/dragonorrange.png');
     // display progress bar
     var progressBar = this.add.graphics();
     var progressBox = this.add.graphics();
@@ -102,6 +108,7 @@ export default class PreloaderScene extends Phaser.Scene {
   }
 
   ready() {
-    this.scene.start('Title');
+    this.scene.start('UserScene');
+    // this.scene.start('Title');
   }
 }

@@ -51,34 +51,34 @@ class BattleScene extends Phaser.Scene {
     );
     this.add.existing(beast);
 
-    const dragonblue = new Enemy(
+    const gnu = new Enemy(
       this,
-      50,
-      50,
-      'dragonblue',
+      150,
+      160,
+      'gnu',
       null,
-      'Dragon',
-      50,
-      3
-    );
-    this.add.existing(dragonblue);
+      'Gnu Warrior',
+      250,
+      30
+    ).setScale(2);
+    this.add.existing(gnu);
 
-    const dragonOrange = new Enemy(
-      this,
-      50,
-      100,
-      'dragonorrange',
-      null,
-      'Dragon2',
-      50,
-      3
-    );
-    this.add.existing(dragonOrange);
+    // const andomalius = new Enemy(
+    //   this,
+    //   50,
+    //   100,
+    //   'andomalius',
+    //   null,
+    //   'Andromalius',
+    //   50,
+    //   3
+    // );
+    // this.add.existing(andomalius);
 
     // array with heroes
     this.heroes = [warrior, knight, beast];
     // array with enemies
-    this.enemies = [dragonblue, dragonOrange];
+    this.enemies = [gnu];
     // array with both parties, who will attack
     this.units = this.heroes.concat(this.enemies);
     this.index = -1; // currently active unit
@@ -159,7 +159,7 @@ class BattleScene extends Phaser.Scene {
     // sleep the UI
     this.scene.sleep('UIScene');
     // return to WorldScene and sleep current BattleScene
-    this.scene.switch('WorldScene');
+    this.scene.switch('Game');
   }
 }
 
@@ -417,11 +417,9 @@ class UIScene extends Phaser.Scene {
     this.events.on('SelectedAction', this.onSelectedAction, this);
 
     // an enemy is selected
-    console.log('line 427', this.events);
     this.events.on('Enemy', this.onEnemy, this);
 
     // when the scene receives wake event
-    console.log('line 431', this.sys.events);
     this.sys.events.on('wake', this.createMenu, this);
 
     // the message describing the current action
@@ -491,14 +489,14 @@ var Message = new Phaser.Class({
     this.add(graphics);
     graphics.lineStyle(1, 0xffffff, 0.8);
     graphics.fillStyle(0x031f4c, 0.3);
-    graphics.strokeRect(-90, -15, 180, 30);
-    graphics.fillRect(-90, -15, 180, 30);
-    this.text = new Phaser.GameObjects.Text(scene, 0, 0, '', {
+    graphics.strokeRect(80, 100, 320, 190);
+    graphics.fillRect(80, 100, 320, 190);
+    this.text = new Phaser.GameObjects.Text(scene, 230, 170, '', {
       color: '#ffffff',
       align: 'center',
       fontFamily: 'Georgia',
-      fontSize: 26,
-      wordWrap: { width: 170, useAdvancedWrap: true },
+      fontSize: 28,
+      wordWrap: { width: 250, useAdvancedWrap: true },
     });
     this.add(this.text);
     this.text.setOrigin(0.5);
@@ -510,7 +508,7 @@ var Message = new Phaser.Class({
     this.visible = true;
     if (this.hideEvent) this.hideEvent.remove(false);
     this.hideEvent = this.scene.time.addEvent({
-      delay: 2000,
+      delay: 2500,
       callback: this.hideMessage,
       callbackScope: this,
     });
