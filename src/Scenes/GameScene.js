@@ -5,20 +5,28 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-  preload() {
-    // load images
-  }
+  preload() {}
 
   create() {
     const map = this.make.tilemap({ key: 'map' });
-    // console.log('map', map);
-    // let tiles = map.addTilesetImage('spritesheet', 'tiles');
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
     // console.log('tiles', tiles);
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
-
+    let score = 0;
+    let scoreText = this.add.text(16, 10, 'Score: 0', {
+      fontSize: '32px',
+      fill: '#fff',
+    });
+    let userName = this.add.text(
+      400,
+      10,
+      this.sys.game.globals.model.userName,
+      { color: '#fff' }
+    );
+    userName.setScrollFactor(0);
+    scoreText.setScrollFactor(0);
     this.player = this.physics.add.sprite(64, 64, 'player', 63);
     this.physics.add.sprite();
     this.physics.world.bounds.width = map.widthInPixels;
