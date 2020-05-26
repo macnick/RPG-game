@@ -11,19 +11,18 @@ export default class GameScene extends Phaser.Scene {
     let grass = map.createStaticLayer('Grass', tiles, 0, 0);
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
-    let score = 0;
-    let scoreText = this.add.text(16, 10, 'Score: 0', {
-      fontSize: '32px',
-      fill: '#fff',
+    this.updateScore();
+    // let score = this.sys.game.globals.model.score;
+    // let scoreText = this.add.text(16, 8, `Score: ${score}`, {
+    //   fontSize: '26px',
+    //   fill: '#fff',
+    // });
+    let userName = this.add.text(400, 8, this.sys.game.globals.model.userName, {
+      fontSize: '26px',
+      color: '#fff',
     });
-    let userName = this.add.text(
-      400,
-      10,
-      this.sys.game.globals.model.userName,
-      { color: '#fff' }
-    );
     userName.setScrollFactor(0);
-    scoreText.setScrollFactor(0);
+    // scoreText.setScrollFactor(0);
 
     //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
     this.anims.create({
@@ -77,6 +76,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     const dangerZones = [
+      [150, 64],
       [980, 640],
       [480, 864],
       [800, 768],
@@ -101,13 +101,26 @@ export default class GameScene extends Phaser.Scene {
       false,
       this
     );
+    // we listen for 'wake' event
+    this.sys.events.on('wake', this.wake, this);
   }
-
+  updateScore() {
+    this.score = this.sys.game.globals.model.score;
+    this.scoreText = this.add.text(16, 8, `Score: ${this.score}`, {
+      fontSize: '26px',
+      fill: '#fff',
+      backgroundColor: '#000',
+    });
+    this.scoreText.setScrollFactor(0);
+  }
   wake() {
     this.cursors.left.reset();
     this.cursors.right.reset();
     this.cursors.up.reset();
     this.cursors.down.reset();
+    this.player.body.setVelocity(0);
+    this.player.anims.stop();
+    this.updateScore();
   }
 
   onMeetEnemy(player, zone) {

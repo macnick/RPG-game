@@ -87,7 +87,7 @@ class BattleScene extends Phaser.Scene {
         return enemy;
       }
     });
-    console.log(this.enemies);
+
     // array with heroes
     this.heroes = [warrior, knight, beast];
     // array with enemies
@@ -137,23 +137,23 @@ class BattleScene extends Phaser.Scene {
   }
   // check for game over or victory
   checkEndBattle() {
-    var victory = true;
+    let victory = true;
     // if all enemies are dead we have victory
-    for (var i = 0; i < this.enemies.length; i++) {
+    for (let i = 0; i < this.enemies.length; i++) {
       if (this.enemies[i].living) victory = false;
     }
-    var gameOver = true;
+    let gameOver = true;
     // if all heroes are dead we have game over
     for (var i = 0; i < this.heroes.length; i++) {
       if (this.heroes[i].living) gameOver = false;
     }
-    return victory || gameOver;
+    return victory ? 'Victory' : gameOver ? 'gameOver' : false;
+    // return victory || gameOver;
   }
   receivePlayerSelection(action, target) {
     if (action == 'attack') {
       this.units[this.index].attack(this.enemies[target]);
     }
-    // next turn in 3 seconds
     this.time.addEvent({
       delay: 3000,
       callback: this.nextTurn,
@@ -161,6 +161,10 @@ class BattleScene extends Phaser.Scene {
     });
   }
   endBattle() {
+    // update score
+    let score = this.sys.game.globals.model.score;
+    score += this.enemies.length * 10;
+    this.sys.game.globals.model.score = score;
     // clear state, remove sprites
     this.heroes.length = 0;
     this.enemies.length = 0;
@@ -170,9 +174,15 @@ class BattleScene extends Phaser.Scene {
     }
     this.units.length = 0;
     // sleep the UI
-    this.scene.sleep('UIScene');
+    if (result === 'gameOver') {
+      this.scene.stop('Game');
+      this.scene.start('GameOver');
+    } else if (result === 'victory') {
+      this.scene.sleep('UIScene');
+      this.scene.switch('Game');
+    }
     // return to WorldScene and sleep current BattleScene
-    this.scene.switch('Game');
+    // this.scene.switch('Game');
   }
 }
 

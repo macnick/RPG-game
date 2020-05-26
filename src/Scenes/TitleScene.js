@@ -54,8 +54,8 @@ export default class TitleScene extends Phaser.Scene {
       config.height / 2 + 180,
       'btn',
       'btn',
-      'LeaderBoard-battle',
-      'Battle'
+      'LeaderBoard',
+      'GameOver'
     );
 
     this.model = this.sys.game.globals.model;
