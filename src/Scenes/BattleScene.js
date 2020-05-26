@@ -33,7 +33,7 @@ class BattleScene extends Phaser.Scene {
       57,
       'Knight',
       110,
-      15
+      20
     );
     this.add.existing(knight);
     // player character beast
@@ -50,7 +50,7 @@ class BattleScene extends Phaser.Scene {
     this.add.existing(beast);
 
     // Create enemies
-    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 200, 30);
+    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 190, 30);
     const andomalius = new Enemy(
       this,
       80,
