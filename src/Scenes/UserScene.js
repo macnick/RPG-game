@@ -11,10 +11,6 @@ export default class UserScene extends Phaser.Scene {
     this.scale.fullscreenTarget = document.getElementById(config.parent);
   }
 
-  preload() {
-    this.load.html('nameform', 'assets/text/nameform.html');
-  }
-
   create() {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
@@ -25,13 +21,14 @@ export default class UserScene extends Phaser.Scene {
       fontSize: '20px ',
     });
 
-    // const element = this.add.dom(400, 300).createFromCache('nameform');
     const input = this.add.dom(400, 300, 'input', {
       type: 'text',
       name: 'nameField',
       fontSize: '32px',
     });
-    const btn = this.add.dom(440, 400, 'button', {}, 'Play Now');
+    const style =
+      'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff';
+    const btn = this.add.dom(400, 400, 'button', style, 'Play Now');
     btn.addListener('click');
 
     btn.on('click', (event) => {
@@ -41,26 +38,6 @@ export default class UserScene extends Phaser.Scene {
         this.scene.start('Title');
       }
     });
-
-    // buttons
-    // this.gameButton = new Button(
-    //   this,
-    //   config.width / 2,
-    //   config.height / 2 - 90,
-    //   'btn',
-    //   'btn',
-    //   '',
-    //   'Title'
-    // );
-    // this.gameButton = new Button(
-    //   this,
-    //   config.width / 2,
-    //   config.height / 2,
-    //   'btn',
-    //   'btn',
-    //   'Enter',
-    //   'Title'
-    // );
   }
 
   ready() {
