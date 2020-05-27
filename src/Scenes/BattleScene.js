@@ -12,7 +12,6 @@ class BattleScene extends Phaser.Scene {
   }
 
   startBattle() {
-    // player character - warrior
     const warrior = new PlayerCharacter(
       this,
       630,
@@ -24,7 +23,6 @@ class BattleScene extends Phaser.Scene {
       20
     );
     this.add.existing(warrior);
-    // player character - knight
     const knight = new PlayerCharacter(
       this,
       630,
@@ -176,8 +174,6 @@ class BattleScene extends Phaser.Scene {
     this.units.length = 0;
     this.index = -1;
 
-    // this.scene.remove('UIScene');
-    // this.scene.remove('BattleScene');
     // sleep the UI
     if (result === 'gameOver') {
       this.scene.stop('Game');

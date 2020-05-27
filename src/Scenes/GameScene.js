@@ -12,11 +12,7 @@ export default class GameScene extends Phaser.Scene {
     let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
     this.updateScore();
-    // let score = this.sys.game.globals.model.score;
-    // let scoreText = this.add.text(16, 8, `Score: ${score}`, {
-    //   fontSize: '26px',
-    //   fill: '#fff',
-    // });
+
     let userName = this.add.text(
       400,
       8,
@@ -76,6 +72,10 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.startFollow(this.player);
     this.cameras.main.roundPixels = true;
 
+    const exit = this.add.zone(900, 960, 80, 80);
+    this.physics.world.enable(exit, 1);
+    this.physics.add.overlap(this.player, exit, this.onExit, false, this);
+
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
@@ -94,7 +94,6 @@ export default class GameScene extends Phaser.Scene {
       [440, 600],
       [360, 740],
     ];
-
     dangerZones.forEach(([x, y], i) => {
       this.spawns.create(x, y, 96, 96);
     });
@@ -134,7 +133,10 @@ export default class GameScene extends Phaser.Scene {
     // start battle
     this.scene.switch('Battle');
   }
-
+  onExit() {
+    console.log('on Exit');
+    this.scene.start('Victory');
+  }
   update(time, delta) {
     this.player.body.setVelocity(0);
 
