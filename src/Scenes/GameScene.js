@@ -25,7 +25,6 @@ export default class GameScene extends Phaser.Scene {
     userName.setScrollFactor(0);
     // scoreText.setScrollFactor(0);
 
-    //  animation with key 'left', we don't need left and right as we will use one and flip the sprite
     this.anims.create({
       key: 'left',
       frames: this.anims.generateFrameNumbers('player', {
