@@ -177,13 +177,12 @@ class BattleScene extends Phaser.Scene {
     // sleep the UI
     if (result === 'gameOver') {
       this.scene.stop('Game');
+      this.scene.sleep('UIScene');
       this.scene.start('GameOver');
     } else if (result === 'victory') {
       this.scene.sleep('UIScene');
       this.scene.switch('Game');
     }
-    // return to WorldScene and sleep current BattleScene
-    // this.scene.switch('Game');
   }
 }
 
