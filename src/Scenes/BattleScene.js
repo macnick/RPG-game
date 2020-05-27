@@ -87,6 +87,7 @@ class BattleScene extends Phaser.Scene {
         return enemy;
       }
     });
+    if (this.enemies.length == 0) this.enemies = [andomalius];
 
     // array with heroes
     this.heroes = [warrior, knight, beast];
@@ -102,7 +103,7 @@ class BattleScene extends Phaser.Scene {
   nextTurn() {
     // if we have victory or game over
     if (this.checkEndBattle()) {
-      this.endBattle();
+      this.endBattle(this.checkEndBattle()); // line modified
       return;
     }
     do {
@@ -147,7 +148,7 @@ class BattleScene extends Phaser.Scene {
     for (var i = 0; i < this.heroes.length; i++) {
       if (this.heroes[i].living) gameOver = false;
     }
-    return victory ? 'Victory' : gameOver ? 'gameOver' : false;
+    return victory ? 'victory' : gameOver ? 'gameOver' : false;
     // return victory || gameOver;
   }
   receivePlayerSelection(action, target) {
@@ -160,7 +161,7 @@ class BattleScene extends Phaser.Scene {
       callbackScope: this,
     });
   }
-  endBattle() {
+  endBattle(result) {
     // update score
     let score = this.sys.game.globals.model.score;
     score += this.enemies.length * 10;
@@ -173,6 +174,10 @@ class BattleScene extends Phaser.Scene {
       this.units[i].destroy();
     }
     this.units.length = 0;
+    this.index = -1;
+
+    // this.scene.remove('UIScene');
+    // this.scene.remove('BattleScene');
     // sleep the UI
     if (result === 'gameOver') {
       this.scene.stop('Game');
