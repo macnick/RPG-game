@@ -16,7 +16,6 @@ export default class VictoryScene extends Phaser.Scene {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
 
-    // input
     const text = this.add
       .text(400, 200, 'Victory', {
         color: 'white',
