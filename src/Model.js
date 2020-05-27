@@ -4,7 +4,7 @@ export default class Model {
     this._musicOn = true;
     this._bgMusicPlaying = false;
     this._user = '';
-    this._score = 11;
+    this._score = 0;
   }
 
   set musicOn(value) {

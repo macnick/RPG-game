@@ -20,10 +20,9 @@ const createGame = async () => {
 };
 
 const url =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/m4mgr2cNF9f7LhXoWmey/scores/';
+  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ddHHOJFYstYIVR0BpaqP/scores/';
 
 const putScore = async (user, score) => {
-  // console.log('Posting score...');
   const body = JSON.stringify({ user, score });
   const data = {
     method: 'POST',
@@ -48,7 +47,7 @@ const getScores = async () => {
   };
   const response = await fetch(url, data);
   const scores = await response.json();
-  return scores;
+  return scores.result;
 };
 
 export { putScore, getScores };
