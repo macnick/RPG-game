@@ -42,7 +42,7 @@ We need [Node.js](https://nodejs.org) to install and run scripts.
 
 ### Live version
 
-[Dark Forest](#https://darkforest.netlify.app)
+[Dark Forest](https://darkforest.netlify.app)
 [Up](#Table-of-Contents)
 
 ### Get a Copy
