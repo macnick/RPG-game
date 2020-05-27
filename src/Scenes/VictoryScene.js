@@ -1,5 +1,6 @@
 import 'phaser';
 import config from '../Config/config';
+import { putScore } from '../leaderBoard';
 
 export default class VictoryScene extends Phaser.Scene {
   constructor() {
@@ -8,6 +9,7 @@ export default class VictoryScene extends Phaser.Scene {
 
   init() {
     this.scale.fullscreenTarget = document.getElementById(config.parent);
+    this.model = this.sys.game.globals.model;
   }
 
   create() {
@@ -33,11 +35,13 @@ export default class VictoryScene extends Phaser.Scene {
       .setOrigin(0.5, 0.5);
 
     this.add
-      .text(400, 400, `Score: ${this.sys.game.globals.model.score}`, {
+      .text(400, 400, `Score: ${this.model.score}`, {
         color: 'white',
         fontSize: '32px ',
       })
       .setOrigin(0.5, 0.5);
+
+    putScore(this.model.userName, this.model.score);
 
     const style =
       'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';

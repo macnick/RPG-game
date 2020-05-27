@@ -17,10 +17,15 @@ export default class GameScene extends Phaser.Scene {
     //   fontSize: '26px',
     //   fill: '#fff',
     // });
-    let userName = this.add.text(400, 8, this.sys.game.globals.model.userName, {
-      fontSize: '26px',
-      color: '#fff',
-    });
+    let userName = this.add.text(
+      400,
+      8,
+      'Player:' + this.sys.game.globals.model.userName,
+      {
+        fontSize: '26px',
+        color: '#fff',
+      }
+    );
     userName.setScrollFactor(0);
     // scoreText.setScrollFactor(0);
 
@@ -76,7 +81,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     const dangerZones = [
-      [150, 64],
+      [300, 64],
       [980, 640],
       [480, 864],
       [800, 768],

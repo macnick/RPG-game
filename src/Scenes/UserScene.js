@@ -32,9 +32,8 @@ export default class UserScene extends Phaser.Scene {
 
     btn.on('click', (event) => {
       if (input.node.value) {
-        this.welcome = 'Welcome ' + input.node.value;
         this.model = this.sys.game.globals.model;
-        this.model.userName = this.welcome;
+        this.model.userName = input.node.value;
         this.scene.start('Title');
       }
     });
