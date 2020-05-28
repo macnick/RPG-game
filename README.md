@@ -49,10 +49,29 @@ Enter you name or avatar in the first screen and click on 'Play Now' button.
 
 Next screen is here you control the game. You have 4 options:
 
-1. Play
-2. Options
-3. Credits
-4. LeaderBoard
+#### Play
+
+Here is where the fun begins. By clicking 'Play' you are transferred to the forest. You move your character on the screen by using the four arrow keys. You can move up, down, left, right, and even diagonally if you keep to arrows pressed simultaneously.
+
+When attacked by foes you are transferred to the Battlefield. On the left side of the screen appear the attacking enemies. On the right side is your team. You, the Warrior, the Knight, and the Beast. Below them are three blue areas. The left area lists the names of the enemies, the right area the names of your team, and in the middle are the available commands. Currently, the only available command is 'Attack'.
+
+Your team starts attacking first, one at a time. The attacker's name is in yellow letters. By pressing the up and down arrow you can select which foe to attack. After selecting press space to commence the attack.
+
+If you kill all the enemies you return to the forest and you can proceed with your quest. If you lose all your team it is 'Game Over' and you are transferred to the 'Game Over' scene.
+
+Your score is updated after each battle. If you get out of the forest you will see the 'Victory' scene and your score.
+
+#### Options
+
+This button gives you the option to turn the music on or off.
+
+#### Credits
+
+The credits for these game.
+
+#### LeaderBoard
+
+The six all-time best scores are listed on the LeaderBoard.
 
 [Up](#Table-of-Contents)
 
