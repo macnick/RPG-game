@@ -48,7 +48,7 @@ If you reach the other end of the forest you are victorious and you can go on to
 1. #### Start Screen
 
 <p align="center">
-<img width="400" height="300" src="assets/screens/input.png">
+<img src="assets/screens/input.png">
 </p>
 
 Enter you name or avatar in the first screen and click on 'Play Now' button.
