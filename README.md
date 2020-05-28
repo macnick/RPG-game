@@ -28,9 +28,13 @@ You are the leader of a small team of warriors. You just received a communicatio
 ### Gameplay
 
 You control a character on the screen which represents your team. You start on the top left corner and you have to navigate through the map to find the exit of the forest.
+
 You will get attacked by a varying number of different enemies during your journey. These are randomly chosen by the game.
+
 When attacked you enter the battle screen where you decide which enemy to attack each time. This is a turn-based RPG so each of your team members attacks only once. The same applies to the enemies when you finish attacking. The battle continues until you defeat all foes or be defeated by them.
+
 Do not worry about your health it is been restored to full after each battle.
+
 If you reach the other end of the forest you are victorious and you can go on to Arcadia to save it from the orc attack. But this is another story...
 
 ### How to Play
