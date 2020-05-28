@@ -53,13 +53,25 @@ If you reach the other end of the forest you are victorious and you can go on to
 
 Enter you name or avatar in the first screen and click on 'Play Now' button.
 
+<p align="center">
+<img src="assets/screens/menu.png">
+</p>
+
 Next screen is here you control the game. You have 4 options:
 
 2. #### Play
 
+<p align="center">
+<img src="assets/screens/play.png">
+</p>
+
 Here is where the fun begins. By clicking 'Play' you are transferred to the forest. You move your character on the screen by using the four arrow keys. You can move up, down, left, right, and even diagonally if you keep to arrows pressed simultaneously.
 
 - #### Battlefield
+
+<p align="center">
+<img src="assets/screens/battle.png">
+</p>
 
 When attacked by foes you are transferred to the Battlefield. On the left side of the screen appear the attacking enemies. On the right side is your team. You, the Warrior, the Knight, and the Beast. Below them are three blue areas. The left area lists the names of the enemies, the right area the names of your team, and in the middle are the available commands. Currently, the only available command is 'Attack'.
 

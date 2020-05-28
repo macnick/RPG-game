@@ -64,7 +64,7 @@ class BattleScene extends Phaser.Scene {
     this.allEnemies = [gnu, and, mage1, mage2, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
-      if (Math.random() > 0.01) {
+      if (Math.random() > 0.5) {
         this.add.existing(enemy);
         return enemy;
       }
