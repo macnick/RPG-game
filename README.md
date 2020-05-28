@@ -49,7 +49,7 @@ Enter you name or avatar in the first screen and click on 'Play Now' button.
 
 Next screen is here you control the game. You have 4 options:
 
-#### Play
+1. #### Play
 
 Here is where the fun begins. By clicking 'Play' you are transferred to the forest. You move your character on the screen by using the four arrow keys. You can move up, down, left, right, and even diagonally if you keep to arrows pressed simultaneously.
 
@@ -61,15 +61,15 @@ If you kill all the enemies you return to the forest and you can proceed with yo
 
 Your score is updated after each battle. If you get out of the forest you will see the 'Victory' scene and your score.
 
-#### Options
+2. #### Options
 
 This button gives you the option to turn the music on or off.
 
-#### Credits
+3. #### Credits
 
 The credits for these game.
 
-#### LeaderBoard
+4. #### LeaderBoard
 
 The six all-time best scores are listed on the LeaderBoard.
 

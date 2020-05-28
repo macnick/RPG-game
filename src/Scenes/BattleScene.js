@@ -34,7 +34,6 @@ class BattleScene extends Phaser.Scene {
       20
     );
     this.add.existing(knight);
-    // player character beast
     const beast = new PlayerCharacter(
       this,
       630,
@@ -47,7 +46,6 @@ class BattleScene extends Phaser.Scene {
     );
     this.add.existing(beast);
 
-    // Create enemies
     const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 180, 30);
     const andomalius = new Enemy(
       this,
@@ -60,10 +58,10 @@ class BattleScene extends Phaser.Scene {
       10
     );
 
-    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Mage L1', 50, 15);
+    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 50, 15);
     // this.add.existing(mage1);
 
-    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Mage L2', 100, 20);
+    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 100, 20);
     // this.add.existing(mage2);
 
     const mage3 = new Enemy(
@@ -72,7 +70,7 @@ class BattleScene extends Phaser.Scene {
       280,
       'mage3',
       null,
-      'SuperMage',
+      'Super Mage',
       150,
       25
     );
@@ -80,7 +78,7 @@ class BattleScene extends Phaser.Scene {
     this.allEnemies = [gnu, andomalius, mage1, mage2, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
-      if (Math.random() > 0.55) {
+      if (Math.random() > 0.9) {
         this.add.existing(enemy);
         return enemy;
       }
@@ -128,7 +126,7 @@ class BattleScene extends Phaser.Scene {
       this.units[this.index].attack(this.heroes[r]);
       // add timer for the next turn, so will have smooth gameplay
       this.time.addEvent({
-        delay: 2400,
+        delay: 2300,
         callback: this.nextTurn,
         callbackScope: this,
       });
@@ -267,7 +265,7 @@ const MenuItem = new Phaser.Class({
       color: '#ffffff',
       align: 'left',
       fontFamily: 'Georgia',
-      fontSize: 30,
+      fontSize: 24,
     });
   },
 
@@ -418,9 +416,9 @@ class UIScene extends Phaser.Scene {
     this.graphics.fillRect(508, 398, 290, 200);
     // basic container to hold all menus
     this.menus = this.add.container();
-    this.enemiesMenu = new EnemiesMenu(32, 410, this);
-    this.actionsMenu = new ActionsMenu(350, 410, this);
-    this.heroesMenu = new HeroesMenu(540, 410, this);
+    this.enemiesMenu = new EnemiesMenu(32, 405, this);
+    this.actionsMenu = new ActionsMenu(350, 405, this);
+    this.heroesMenu = new HeroesMenu(540, 405, this);
     // the currently selected menu
     this.currentMenu = this.actionsMenu;
 
@@ -519,7 +517,7 @@ const Message = new Phaser.Class({
       color: '#ffffff',
       align: 'center',
       fontFamily: 'Georgia',
-      fontSize: 28,
+      fontSize: 26,
       wordWrap: { width: 250, useAdvancedWrap: true },
     });
     this.add(this.text);
@@ -532,7 +530,7 @@ const Message = new Phaser.Class({
     this.visible = true;
     if (this.hideEvent) this.hideEvent.remove(false);
     this.hideEvent = this.scene.time.addEvent({
-      delay: 2000,
+      delay: 1700,
       callback: this.hideMessage,
       callbackScope: this,
     });
