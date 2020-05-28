@@ -20,7 +20,7 @@ class BattleScene extends Phaser.Scene {
       69,
       'Warrior',
       100,
-      20
+      25
     );
     this.add.existing(warrior);
     const knight = new PlayerCharacter(
@@ -48,7 +48,7 @@ class BattleScene extends Phaser.Scene {
     this.add.existing(beast);
 
     // Create enemies
-    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 190, 30);
+    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 180, 30);
     const andomalius = new Enemy(
       this,
       80,
@@ -128,7 +128,7 @@ class BattleScene extends Phaser.Scene {
       this.units[this.index].attack(this.heroes[r]);
       // add timer for the next turn, so will have smooth gameplay
       this.time.addEvent({
-        delay: 3000,
+        delay: 2500,
         callback: this.nextTurn,
         callbackScope: this,
       });
