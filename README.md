@@ -83,21 +83,28 @@ Your score is updated after each battle. If you get out of the forest you will s
 
 3. #### Options
 
+<p align="center">
+<img src="assets/screens/options.png">
+</p>
+
 This button gives you the option to turn the music on or off.
 
 4. #### Credits
 
-The credits for these game.
+<p align="center">
+<img src="assets/screens/credits.png">
+</p>
+
+The credits for this game.
 
 5. #### LeaderBoard
 
+<p align="center">
+<img src="assets/screens/leaders.png">
+</p>
+
 The six all-time best scores are listed on the LeaderBoard.
 
-[Up](#Table-of-Contents)
-
-### Design
-
-list the scenes
 [Up](#Table-of-Contents)
 
 ### Technologies Used
@@ -109,7 +116,7 @@ We need [Node.js](https://nodejs.org) to install and run scripts.
 
 [Up](#Table-of-Contents)
 
-### Get a Copy
+### Get a Local Copy
 
 [Up](#Table-of-Contents)
 
