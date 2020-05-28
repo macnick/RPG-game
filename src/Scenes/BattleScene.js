@@ -19,8 +19,8 @@ class BattleScene extends Phaser.Scene {
       'player',
       69,
       'Warrior',
-      100,
-      25
+      125,
+      30
     );
     this.add.existing(warrior);
     const knight = new PlayerCharacter(
@@ -30,8 +30,8 @@ class BattleScene extends Phaser.Scene {
       'player',
       57,
       'Knight',
-      110,
-      20
+      135,
+      25
     );
     this.add.existing(knight);
     const beast = new PlayerCharacter(
@@ -42,28 +42,14 @@ class BattleScene extends Phaser.Scene {
       141,
       'Beast',
       120,
-      30
+      35
     );
     this.add.existing(beast);
 
-    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 180, 30);
-    const andomalius = new Enemy(
-      this,
-      80,
-      90,
-      'andomalius',
-      null,
-      'Andromalius',
-      80,
-      10
-    );
-
-    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 50, 15);
-    // this.add.existing(mage1);
-
-    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 100, 20);
-    // this.add.existing(mage2);
-
+    const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 160, 30);
+    const and = new Enemy(this, 80, 90, 'and', null, 'Andromalius', 60, 10);
+    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 40, 15);
+    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 80, 20);
     const mage3 = new Enemy(
       this,
       210,
@@ -71,24 +57,26 @@ class BattleScene extends Phaser.Scene {
       'mage3',
       null,
       'Super Mage',
-      150,
+      120,
       25
     );
 
-    this.allEnemies = [gnu, andomalius, mage1, mage2, mage3];
+    this.allEnemies = [gnu, and, mage1, mage2, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
-      if (Math.random() > 0.9) {
+      if (Math.random() > 0.01) {
         this.add.existing(enemy);
         return enemy;
       }
     });
-    if (this.enemies.length == 0) this.enemies = [andomalius];
+    if (this.enemies.length == 0) {
+      this.enemies = [and];
+      this.add.existing(and);
+    }
 
     // array with heroes
     this.heroes = [warrior, knight, beast];
-    // array with enemies
-    // this.enemies = [gnu, andomalius, mage1, mage2];
+
     // array with both parties, who will attack
     this.units = this.heroes.concat(this.enemies);
     this.index = -1; // currently active unit
@@ -159,8 +147,9 @@ class BattleScene extends Phaser.Scene {
   }
   endBattle(result) {
     // update score
+    console.log(this.heroes);
     let score = this.sys.game.globals.model.score;
-    score += this.enemies.length * 10;
+    score += this.enemies.length * 10 + this.heroes.length * 10;
     this.sys.game.globals.model.score = score;
     // clear state, remove sprites
     this.heroes.length = 0;
@@ -176,7 +165,7 @@ class BattleScene extends Phaser.Scene {
     if (result === 'gameOver') {
       this.scene.stop('Game');
       this.scene.sleep('UIScene');
-      this.scene.start('GameOver');
+      this.scene.start('GameOver'); // maybe switch GameOver ?
     } else if (result === 'victory') {
       this.scene.sleep('UIScene');
       this.scene.switch('Game');
