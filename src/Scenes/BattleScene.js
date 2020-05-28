@@ -165,7 +165,8 @@ class BattleScene extends Phaser.Scene {
     if (result === 'gameOver') {
       this.scene.stop('Game');
       this.scene.sleep('UIScene');
-      this.scene.start('GameOver'); // maybe switch GameOver ?
+      // this.scene.start('GameOver'); // maybe switch GameOver ?
+      this.scene.switch('GameOver');
     } else if (result === 'victory') {
       this.scene.sleep('UIScene');
       this.scene.switch('Game');
@@ -272,7 +273,6 @@ const MenuItem = new Phaser.Class({
   },
 });
 
-// base menu class, container for menu items
 const Menu = new Phaser.Class({
   Extends: Phaser.GameObjects.Container,
 
