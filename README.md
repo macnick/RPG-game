@@ -18,11 +18,15 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 ### Objective
 
 The objective of this project is to build a simple turn-based RPG game with a scoring system, using JavaScript ES6, Phaser 3 framework, and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to design the story, the gameplay, the scenes, and the scoring system.
+
 [Up](#Table-of-Contents)
 
 ### Story
 
-You are the leader of a small team of warriors. You just received a communication from headquarters that the frontier town of Arcadia is about to be attacked by a horde of Orcs. You have to be there in 2 days to save the people of the town. If you take the safe road you will there in 7 days. That is too long and your town will be lost. The only chance to make it on time is to pass through the dangerous **Dark Forest**. Passing the forest will be difficult and risky. It is known that various monsters and reprobates are larking in places waiting to attack any trespassers. Even you and your experienced fighters might not be able to accomplish that. The people of Arcadia are relying on you to save them. Do not fail them.
+You are the leader of a small team of warriors. You just received a communication from headquarters that the frontier town of Arcadia is about to be attacked by a horde of Orcs. You have to be there in 2 days to save the people of the town from the assault. If you take the safe road you will there in 7 days. That is too long and your town will be lost. The only chance to make it on time is to pass through the dangerous **Dark Forest**.
+
+Passing the forest will be difficult and risky. It is known that various monsters and reprobates are larking in places waiting to attack any trespassers. Even you and your experienced fighters might not be able to accomplish that. The people of Arcadia are relying on you to save them. Do not fail them.
+
 [Up](#Table-of-Contents)
 
 ### Gameplay
@@ -37,11 +41,19 @@ Do not worry about your health it is been restored to full after each battle.
 
 If you reach the other end of the forest you are victorious and you can go on to Arcadia to save it from the orc attack. But this is another story...
 
+[Up](#Table-of-Contents)
+
 ### How to Play
 
-Enter you name or avatar in the first screen and click on Play.
+Enter you name or avatar in the first screen and click on 'Play Now' button.
 
-Use the arrow keys
+Next screen is here you control the game. You have 4 options:
+
+1. Play
+2. Options
+3. Credits
+4. LeaderBoard
+
 [Up](#Table-of-Contents)
 
 ### Design
