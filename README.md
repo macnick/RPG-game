@@ -7,12 +7,10 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 - [Objective](#Objective)
 - [Story](#Story)
 - [How to Play](#How-to-Play)
-- [Design](#Design)
 - [Scenes](#Scenes)
 - [Technologies Used](#Technologies-Used)
 - [Live Version](#Live-version)
-- [Get A Copy](#Get-A-Copy)
-  - [Install and Run](#Install-and-run)
+- [Install and Run](#Install-and-run)
 - [Acknowledgements](#copyright)
 
 ### Objective
@@ -23,9 +21,9 @@ The objective of this project is to build a simple turn-based RPG game with a sc
 
 ### Story
 
-You are the leader of a small team of warriors. You just received a communication from headquarters that the frontier town of Arcadia is about to be attacked by a horde of Orcs. You have to be there in 2 days to save the people of the town from the assault. If you take the safe road you will there in 7 days. That is too long and your town will be lost. The only chance to make it on time is to pass through the dangerous **Dark Forest**.
+You are the leader of a small team of warriors. You just received a communication from headquarters that the frontier town of Arcadia is about to be attacked by a horde of Orcs. You have to be there in 2 days to save the people of the town from the assault. If you take the safe road you will arrive in 7 days. That is too long and the town will be lost. The only chance to make it on time is to pass through the dangerous **Dark Forest**.
 
-Passing the forest will be difficult and risky. It is known that various monsters and reprobates are larking in places waiting to attack any trespassers. Even you and your experienced fighters might not be able to accomplish that. The people of Arcadia are relying on you to save them. Do not fail them.
+Passing the forest will be difficult and risky. It is known that various monsters and reprobates are larking in places waiting to attack any trespassers. Even you and your experienced fighters might not be able to accomplish that. The people of Arcadia are relying on you to save them. Do not fail your mission.
 
 [Up](#Table-of-Contents)
 
@@ -87,7 +85,9 @@ Your score is updated after each battle. If you get out of the forest you will s
 <img src="assets/screens/options.png">
 </p>
 
-This button gives you the option to turn the music on or off.
+'Music Enabled' checkbox controls whether you will have music during playing or not.
+
+'Sound Enabled' button is not operational yet.
 
 4. #### Credits
 
@@ -109,14 +109,28 @@ The six all-time best scores are listed on the LeaderBoard.
 
 ### Technologies Used
 
-We need [Node.js](https://nodejs.org) to install and run scripts.
+- Node
+- Phaser 3
+- JavaScript
+- Webpack
+- Babel
+- Jest
+- ESlint
+- HTML/CSS
+- Netlify
+- Microverse Leaderboard API
+
 [Up](#Table-of-Contents)
 
 ### Live version
 
+You can play the game online here: [**Dark Forest**](https://darkforest.netlify.app)
+
 [Up](#Table-of-Contents)
 
-### Get a Local Copy
+### How to Install and Run in Your Computer
+
+First install [Node.js](https://nodejs.org) to be able to run the scripts. Follow the installation instructions for your system Mac, Linux or Window.
 
 [Up](#Table-of-Contents)
 
