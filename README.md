@@ -41,6 +41,10 @@ If you reach the other end of the forest you are victorious and you can go on to
 
 Enter you name or avatar in the first screen and click on Play.
 
+1 lala
+2 sedcokf
+3 sldkfj
+
 Use the arrow keys
 [Up](#Table-of-Contents)
 
