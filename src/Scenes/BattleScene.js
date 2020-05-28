@@ -128,7 +128,7 @@ class BattleScene extends Phaser.Scene {
       this.units[this.index].attack(this.heroes[r]);
       // add timer for the next turn, so will have smooth gameplay
       this.time.addEvent({
-        delay: 2500,
+        delay: 2400,
         callback: this.nextTurn,
         callbackScope: this,
       });
