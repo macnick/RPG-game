@@ -134,6 +134,7 @@ To run the scripts **npm** is required. To get npm you have to install [Node.js]
 
 Use your terminal and run the commands after each instruction.
 
+<<<<<<< HEAD
 | Command                                                | Description                                            |
 | ------------------------------------------------------ | ------------------------------------------------------ |
 | `git clone https://github.com/macnick/RPG-game.git`    | Clone the repository to you computer                   |
@@ -141,6 +142,21 @@ Use your terminal and run the commands after each instruction.
 | `npm install`                                          | Install dependencies and launch browser with examples. |
 | `npm start`                                            | Makes the build and starts the development server      |
 | <br> Press `Ctrl + c` to kill **http-server** process. |
+=======
+| Command                                             | Description                                                                                 |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `git clone https://github.com/macnick/RPG-game.git` | Clone the repository to you computer                                                        |
+| `cd RPG-game`                                       | Navigate to the newly created folder                                                        |
+| `npm install`                                       | Install dependencies and launch browser with examples.                                      |
+| `npm start`                                         | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
+
+1. Clone the repository by running this command
+   `git clone https://github.com/macnick/RPG-game.git`
+2. Navigate to the newly created folder
+   `cd RPG-game`
+3. Install the dependencies
+   `npm install`
+>>>>>>> 750351e9bbb21fe5c2bc3d728c4344abf2619569
 
 [Up](#Table-of-Contents)
 
