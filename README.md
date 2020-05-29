@@ -124,7 +124,7 @@ The six all-time best scores are listed on the LeaderBoard.
 
 ### Live version
 
-You can play the game online here: [**Dark Forest**](https://darkforest.netlify.app)
+The game is hosted on netlify.com You can play the game here: [**Dark Forest**](https://darkforest.netlify.app)
 
 [Up](#Table-of-Contents)
 
@@ -133,6 +133,12 @@ You can play the game online here: [**Dark Forest**](https://darkforest.netlify.
 To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
 
 Use your terminal and run the commands after each instruction
+
+| Command                                             | Description                                                                                 |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `git clone https://github.com/macnick/RPG-game.git` | Clone the repository to you computer                                                        |
+| `npm install`                                       | Install dependencies and launch browser with examples.                                      |
+| `npm start`                                         | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
 
 1. Clone the repository by running this command
    `git clone https://github.com/macnick/RPG-game.git`
