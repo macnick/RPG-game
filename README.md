@@ -132,11 +132,12 @@ The game is hosted on netlify.com You can play the game here: [**Dark Forest**](
 
 To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
 
-Use your terminal and run the commands after each instruction
+Use your terminal and run the commands after each instruction.
 
 | Command                                             | Description                                                                                 |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `git clone https://github.com/macnick/RPG-game.git` | Clone the repository to you computer                                                        |
+| `cd RPG-game`                                       | Navigate to the newly created folder                                                        |
 | `npm install`                                       | Install dependencies and launch browser with examples.                                      |
 | `npm start`                                         | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
 
