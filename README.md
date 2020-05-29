@@ -143,9 +143,8 @@ Use your terminal and run the commands after each instruction.
 |                                                     | <br> Press `Ctrl + c` to kill **http-server** process |
 | `[http://localhost:8000](#http://localhost:8000)`   | Visit this link to play the game                      |
 
-[Up](#Table-of-Contents)
-
 =======
+
 [Up](#Table-of-Contents)
 
 ## Copyright - Acknowlegements
