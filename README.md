@@ -109,7 +109,7 @@ The six all-time best scores are listed on the LeaderBoard.
 
 ### Technologies Used
 
-- Node
+- Node, npm
 - Phaser 3
 - JavaScript
 - Webpack
@@ -130,7 +130,16 @@ You can play the game online here: [**Dark Forest**](https://darkforest.netlify.
 
 ### How to Install and Run in Your Computer
 
-First install [Node.js](https://nodejs.org) to be able to run the scripts. Follow the installation instructions for your system Mac, Linux or Window.
+To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
+
+Use your terminal and run the commands after each instruction
+
+1. Clone the repository by running this command
+   `git clone https://github.com/macnick/RPG-game.git`
+2. Navigate to the newly created folder
+   `cd RPG-game`
+3. Install the dependencies
+   `npm install`
 
 [Up](#Table-of-Contents)
 
