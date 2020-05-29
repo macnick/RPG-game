@@ -140,16 +140,13 @@ Use your terminal and run the commands after each instruction.
 | `cd RPG-game`                                       | Navigate to the newly created folder                  |
 | `npm install`                                       | Install dependencies and launch browser with examples |
 | `npm start`                                         | Makes the build and starts the development server     |
-|                                                     | <br> Press `Ctrl + c` to kill **http-server** process |
-| `[http://localhost:8000](#http://localhost:8000)`   | Visit this link to play the game                      |
+|                                                     | Press `Ctrl + c` to kill **http-server** process      |
+| `http://localhost:8000`                             | Visit this link to play the game                      |
 
-[Up](#Table-of-Contents)
-
-=======
 [Up](#Table-of-Contents)
 
 ## Copyright - Acknowlegements
 
 - Dark Forest Background image By Zeyu Ren 任泽宇
-- Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](#https://opengameart.org/)
-- Title image created using textcraft.com
+- Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
+- Title image created using [textcraft.net](https://textcraft.net)
