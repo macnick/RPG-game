@@ -20,7 +20,7 @@ class BattleScene extends Phaser.Scene {
       69,
       'Warrior',
       125,
-      30
+      25
     );
     this.add.existing(warrior);
     const knight = new PlayerCharacter(
@@ -31,7 +31,7 @@ class BattleScene extends Phaser.Scene {
       57,
       'Knight',
       135,
-      25
+      20
     );
     this.add.existing(knight);
     const beast = new PlayerCharacter(
@@ -42,14 +42,14 @@ class BattleScene extends Phaser.Scene {
       141,
       'Beast',
       120,
-      35
+      30
     );
     this.add.existing(beast);
 
     const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 160, 30);
     const and = new Enemy(this, 80, 90, 'and', null, 'Andromalius', 60, 10);
-    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 40, 15);
-    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 80, 20);
+    const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 80, 15);
+    const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 90, 20);
     const mage3 = new Enemy(
       this,
       210,
@@ -64,7 +64,7 @@ class BattleScene extends Phaser.Scene {
     this.allEnemies = [gnu, and, mage1, mage2, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
-      if (Math.random() > 0.5) {
+      if (Math.random() > 0.45) {
         this.add.existing(enemy);
         return enemy;
       }

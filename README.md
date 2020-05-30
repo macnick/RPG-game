@@ -152,3 +152,31 @@ Use your terminal and run the commands after each instruction.
 - Title image created using [textcraft.net](https://textcraft.net)
 
 [Up](#Table-of-Contents)
+
+## Author
+
+👤 **Author**
+
+- Github: [@macnick](https://github.com/macnick)
+- Twitter: [@mac_experts](https://twitter.com/mac_experts)
+- Linkedin: [Nick Haralampopoulos](https://www.linkedin.com/in/nick-haralampopoulos/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/macnick/RPG-game/issues).
+
+1. Fork it (https://github.com/macnick/RPG-game/fork)
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create a new Pull Request
+
+## Show your support
+
+Give a ⭐️ if you enjoyed this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
