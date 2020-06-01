@@ -25,9 +25,9 @@ export default class VictoryScene extends Phaser.Scene {
       .setOrigin(0.5, 0.5);
 
     let victory =
-      'Congratulations brave warrior. You have \nmade it on time to save the border town.';
+      'Congratulations brave warrior. You have \nmade it on time to save Arcadia!';
     const score = this.add
-      .text(400, 300, `${victory}`, {
+      .text(400, 300, victory, {
         color: 'white',
         fontSize: '24px ',
       })
