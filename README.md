@@ -124,20 +124,7 @@ The six all-time best scores are listed on the LeaderBoard.
 
 ### Live version
 
-<<<<<<< HEAD
 The game is hosted on netlify.com You can play the game here: [**Dark Forest**](https://darkforest.netlify.app)
-<<<<<<< HEAD
-=======
-
-=======
-<<<<<<< HEAD
-[Dark Forest](https://darkforest.netlify.app)
-=======
-You can play the game online here: [**Dark Forest**](https://darkforest.netlify.app)
-
-> > > > > > > modifications
-> > > > > > > 819afda35e7b7355858d07411e32664479049c89
-> > > > > > > [Up](#Table-of-Contents)
 
 ### How to Install and Run in Your Computer
 
