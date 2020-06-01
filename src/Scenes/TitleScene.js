@@ -10,8 +10,8 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
-    let user = this.sys.game.globals.model.userName;
-    this.add.text(config.width / 2, 20, 'Welcome ' + user).setOrigin(0.5, 0.5);
+    const user = this.sys.game.globals.model.userName;
+    this.add.text(config.width / 2, 20, `Welcome ${user}`).setOrigin(0.5, 0.5);
 
     // Game
     this.gameButton = new Button(
@@ -21,7 +21,7 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'btn',
       'Play',
-      'Game'
+      'Game',
     );
     // Options
     this.gameButton = new Button(
@@ -31,7 +31,7 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'btn',
       'Options',
-      'Options'
+      'Options',
     );
     // Credits
     this.gameButton = new Button(
@@ -41,7 +41,7 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'btn',
       'Credits',
-      'Credits'
+      'Credits',
     );
 
     // LeaderBoard
@@ -52,7 +52,7 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'btn',
       'LeaderBoard',
-      'LeaderBoard'
+      'LeaderBoard',
       // 'Victory'
       // 'GameOver'
     );

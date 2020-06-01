@@ -125,9 +125,17 @@ The six all-time best scores are listed on the LeaderBoard.
 ### Live version
 
 The game is hosted on netlify.com You can play the game here: [**Dark Forest**](https://darkforest.netlify.app)
+<<<<<<< HEAD
+=======
 
 [Up](#Table-of-Contents)
 
+### How to Install and Run in Your Computer
+>>>>>>> modifications
+
+To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
+
+<<<<<<< HEAD
 ### How to Install and Run in Your Computer
 
 To run the scripts **npm** is required. To get npm you have to install [Node.js](https://nodejs.org). Follow the installation instructions for your system Mac, Linux or Windows.
@@ -155,6 +163,37 @@ Use your terminal and run the commands after each instruction.
 
 ## 👤 Author
 
+=======
+Use your terminal and run the commands after each instruction.
+
+| Command                                             | Description                                           |
+| --------------------------------------------------- | ----------------------------------------------------- |
+| `git clone https://github.com/macnick/RPG-game.git` | Clone the repository to you computer                  |
+| `cd RPG-game`                                       | Navigate to the newly created folder                  |
+| `npm install`                                       | Install dependencies and launch browser with examples |
+| `npm start`                                         | Makes the build and starts the development server     |
+|                                                     | Press `Ctrl + c` to kill **http-server** process      |
+| `http://localhost:8000`                             | Visit this link to play the game                      |
+
+[Up](#Table-of-Contents)
+
+## Acknowlegements
+
+- Dark Forest Background image By Zeyu Ren 任泽宇
+<<<<<<< HEAD
+- Button and enemy images by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
+- Title image created using [textcraft.net](https://textcraft.net)
+- Player images by [craftpix.net](https://craftpix.net/)
+=======
+- Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
+- Title image created using [textcraft.net](https://textcraft.net)
+>>>>>>> dc5536b38cc9a05908a23a9b5c0a5885da19ed4a
+
+[Up](#Table-of-Contents)
+
+## 👤 Author
+
+>>>>>>> modifications
 - Github: [@macnick](https://github.com/macnick)
 - Twitter: [@mac_experts](https://twitter.com/mac_experts)
 - Linkedin: [Nick Haralampopoulos](https://www.linkedin.com/in/nick-haralampopoulos/)

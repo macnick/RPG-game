@@ -7,8 +7,8 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
-    let title = { fontFamily: 'Georgia', fontSize: 40 };
-    let selection = { fontFamily: 'Tahoma', fontSize: 24 };
+    const title = { fontFamily: 'Georgia', fontSize: 40 };
+    const selection = { fontFamily: 'Tahoma', fontSize: 24 };
     this.model = this.sys.game.globals.model;
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
@@ -25,18 +25,18 @@ export default class OptionsScene extends Phaser.Scene {
 
     this.musicButton.on(
       'pointerdown',
-      function () {
+      () => {
         this.model.musicOn = !this.model.musicOn;
         this.updateAudio();
-      }.bind(this)
+      },
     );
 
     this.soundButton.on(
       'pointerdown',
-      function () {
+      () => {
         this.model.soundOn = !this.model.soundOn;
         this.updateAudio();
-      }.bind(this)
+      },
     );
 
     this.menuButton = new Button(this, 400, 480, 'btn', 'btn', 'Menu', 'Title');

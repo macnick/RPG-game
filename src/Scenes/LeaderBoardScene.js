@@ -29,7 +29,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
         fontSize: '16px ',
       };
       scores.sort((a, b) => b.score - a.score);
-      let margin = 30;
+      const margin = 30;
       for (let i = 0; i < 6; i++) {
         if (scores[i] != undefined) {
           this.add
@@ -37,7 +37,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
               400,
               240 + margin * i,
               `${i + 1}. ${scores[i].user} ${scores[i].score}`,
-              scoreStyle
+              scoreStyle,
             )
             .setOrigin(0.5, 0.5);
         }
@@ -45,8 +45,7 @@ export default class LeaderBoardScene extends Phaser.Scene {
       console.log('sc ', scores);
     });
 
-    const style =
-      'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
+    const style = 'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
     const btn = this.add.dom(390, 490, 'button', style, 'Menu');
     btn.addListener('click');
 

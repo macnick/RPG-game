@@ -17,7 +17,7 @@ export default class VictoryScene extends Phaser.Scene {
     this.add.image(400, 100, 'title');
 
     const text = this.add
-      .text(400, 200, 'Victory', {
+      .text(400, 200, 'Victory!', {
         color: 'white',
         fontSize: '32px ',
         fontFamily: 'Georgia',

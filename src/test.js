@@ -1,7 +1,6 @@
 const createGame = async () => {
   const name = JSON.stringify({ name: 'Dark Forest' });
-  let url =
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
   const data = {
     method: 'POST',
     headers: {
