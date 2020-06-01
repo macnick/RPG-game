@@ -23,7 +23,7 @@ export default class PreloaderScene extends Phaser.Scene {
         frameHeight: 32,
       }
     );
-    this.load.spritesheet('andomalius', 'assets/images/andromalius-57x88.png', {
+    this.load.spritesheet('and', 'assets/images/andromalius-57x88.png', {
       frameWidth: 57,
       frameHeight: 88,
     });
