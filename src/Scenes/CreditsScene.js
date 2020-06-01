@@ -15,7 +15,7 @@ export default class CreditsScene extends Phaser.Scene {
       0,
       120,
       'Created By: Nick Haralampopoulos',
-      style
+      style,
     );
     this.line1 = this.add.text(0, 0, 'Final Capstone Project', style);
     this.line2 = this.add.text(0, 0, 'in JavaScipt Curriculum', style);
@@ -27,7 +27,7 @@ export default class CreditsScene extends Phaser.Scene {
       config.width / 2,
       config.height / 3,
       config.width,
-      config.height
+      config.height,
     );
 
     Phaser.Display.Align.In.Center(this.created, this.zone);
@@ -43,8 +43,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.phaser.displayOriginY = -150;
     this.open.displayOriginY = -180;
 
-    const btnStyle =
-      'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
+    const btnStyle = 'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
     const btn = this.add.dom(390, 490, 'button', btnStyle, 'Menu');
     btn.addListener('click');
 

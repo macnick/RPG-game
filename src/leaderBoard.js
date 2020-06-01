@@ -1,9 +1,8 @@
-import regeneratorRuntime from 'regenerator-runtime';
+import 'regenerator-runtime';
 
 const createGame = async () => {
   const name = JSON.stringify({ name: 'Dark Forest' });
-  let url =
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+  const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
   const data = {
     method: 'POST',
     headers: {
@@ -19,8 +18,7 @@ const createGame = async () => {
   return keyData;
 };
 
-const url =
-  'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ddHHOJFYstYIVR0BpaqP/scores/';
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/ddHHOJFYstYIVR0BpaqP/scores/';
 
 const putScore = async (user, score) => {
   const body = JSON.stringify({ user, score });
@@ -30,7 +28,7 @@ const putScore = async (user, score) => {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: body,
+    body,
   };
   const response = await fetch(url, data);
   const result = await response.json();

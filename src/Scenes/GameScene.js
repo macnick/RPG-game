@@ -8,19 +8,19 @@ export default class GameScene extends Phaser.Scene {
   create() {
     const map = this.make.tilemap({ key: 'map' });
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
-    let grass = map.createStaticLayer('Grass', tiles, 0, 0);
-    let obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
+    const grass = map.createStaticLayer('Grass', tiles, 0, 0);
+    const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
     this.updateScore();
 
-    let userName = this.add.text(
+    const userName = this.add.text(
       400,
       8,
-      'Player:' + this.sys.game.globals.model.userName,
+      `Player:${this.sys.game.globals.model.userName}`,
       {
         fontSize: '26px',
         color: '#fff',
-      }
+      },
     );
     userName.setScrollFactor(0);
     // scoreText.setScrollFactor(0);
@@ -102,11 +102,12 @@ export default class GameScene extends Phaser.Scene {
       this.spawns,
       this.onMeetEnemy,
       false,
-      this
+      this,
     );
     // we listen for 'wake' event
     this.sys.events.on('wake', this.wake, this);
   }
+
   updateScore() {
     this.score = this.sys.game.globals.model.score;
     this.scoreText = this.add.text(16, 8, `Score: ${this.score}`, {
@@ -116,6 +117,7 @@ export default class GameScene extends Phaser.Scene {
     });
     this.scoreText.setScrollFactor(0);
   }
+
   wake() {
     this.cursors.left.reset();
     this.cursors.right.reset();
@@ -132,10 +134,12 @@ export default class GameScene extends Phaser.Scene {
     // start battle
     this.scene.switch('Battle');
   }
+
   onExit() {
     console.log('on Exit');
     this.scene.start('Victory');
   }
+
   update(time, delta) {
     this.player.body.setVelocity(0);
 
