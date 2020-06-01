@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-use-before-define */
 import 'phaser';
 
 class BattleScene extends Phaser.Scene {
@@ -20,7 +22,7 @@ class BattleScene extends Phaser.Scene {
       null,
       'Warrior',
       125,
-      25
+      25,
     );
     this.add.existing(warrior);
     const knight = new PlayerCharacter(
@@ -31,7 +33,7 @@ class BattleScene extends Phaser.Scene {
       null,
       'Knight',
       130,
-      20
+      20,
     );
     this.add.existing(knight);
     const beast = new PlayerCharacter(
@@ -42,7 +44,7 @@ class BattleScene extends Phaser.Scene {
       null,
       'Beast',
       120,
-      30
+      30,
     );
     this.add.existing(beast);
 
@@ -58,7 +60,7 @@ class BattleScene extends Phaser.Scene {
       null,
       'Super Mage',
       120,
-      25
+      25,
     );
 
     this.allEnemies = [gnu, and, mage1, mage2, mage3];
@@ -151,7 +153,7 @@ class BattleScene extends Phaser.Scene {
   endBattle(result) {
     // update score
     console.log(this.heroes);
-    let score = this.sys.game.globals.model.score;
+    let { score } = this.sys.game.globals.model;
     score += this.enemies.length * 10 + this.heroes.length * 10;
     this.sys.game.globals.model.score = score;
     // clear state, remove sprites
@@ -199,7 +201,7 @@ const Unit = new Phaser.Class({
       target.takeDamage(this.damage);
       this.scene.events.emit(
         'Message',
-        `${this.type} attacks ${target.type} for ${this.damage} damage`
+        `${this.type} attacks ${target.type} for ${this.damage} damage`,
       );
     }
   },
@@ -234,7 +236,7 @@ const PlayerCharacter = new Phaser.Class({
     frame,
     type,
     hp,
-    damage
+    damage,
   ) {
     Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
     this.flipX = true;
@@ -283,7 +285,7 @@ const Menu = new Phaser.Class({
       0,
       this.menuItems.length * 40,
       unit,
-      this.scene
+      this.scene,
     );
     this.menuItems.push(menuItem);
     this.add(menuItem);
@@ -294,8 +296,7 @@ const Menu = new Phaser.Class({
     this.menuItems[this.menuItemIndex].deselect();
     do {
       this.menuItemIndex--;
-      if (this.menuItemIndex < 0)
-        this.menuItemIndex = this.menuItems.length - 1;
+      if (this.menuItemIndex < 0) this.menuItemIndex = this.menuItems.length - 1;
     } while (!this.menuItems[this.menuItemIndex].active);
     this.menuItems[this.menuItemIndex].select();
   },
