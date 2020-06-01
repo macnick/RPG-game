@@ -22,6 +22,7 @@ export default class CreditsScene extends Phaser.Scene {
     this.credits = this.add.text(0, 0, 'Credits', style);
     this.phaser = this.add.text(0, 0, 'Phaser 3', style);
     this.open = this.add.text(0, 0, 'OpenGameArt', style);
+    this.tcraft = this.add.text(0, 0, 'TextCraft', style);
 
     this.zone = this.add.zone(
       config.width / 2,
@@ -36,12 +37,14 @@ export default class CreditsScene extends Phaser.Scene {
     Phaser.Display.Align.In.Center(this.credits, this.zone);
     Phaser.Display.Align.In.Center(this.phaser, this.zone);
     Phaser.Display.Align.In.Center(this.open, this.zone);
+    Phaser.Display.Align.In.Center(this.tcraft, this.zone);
 
     this.line1.displayOriginY = -30;
     this.line2.displayOriginY = -60;
     this.credits.displayOriginY = -120;
     this.phaser.displayOriginY = -150;
     this.open.displayOriginY = -180;
+    this.tcraft.displayOriginY = -210;
 
     const btnStyle = 'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
     const btn = this.add.dom(390, 490, 'button', btnStyle, 'Menu');

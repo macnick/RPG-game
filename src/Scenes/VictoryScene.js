@@ -17,14 +17,15 @@ export default class VictoryScene extends Phaser.Scene {
     this.add.image(400, 100, 'title');
 
     const text = this.add
-      .text(400, 200, 'Victory', {
+      .text(400, 200, 'Victory!', {
         color: 'white',
         fontSize: '32px ',
         fontFamily: 'Georgia',
       })
       .setOrigin(0.5, 0.5);
 
-    const victory = 'Congratulations brave warrior. You have \nmade it on time to save Arcadia!';
+    let victory =
+      'Congratulations brave warrior. You have \nmade it on time to save Arcadia.';
     const score = this.add
       .text(400, 300, victory, {
         color: 'white',
@@ -41,7 +42,8 @@ export default class VictoryScene extends Phaser.Scene {
 
     putScore(this.model.userName, this.model.score);
 
-    const style = 'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
+    const style =
+      'background: url(assets/ui/button_small.png); width: 490px; height: 77px; border: none; font: 32px Georgia; color: #fff;';
     const btn = this.add.dom(390, 490, 'button', style, 'Menu');
     btn.addListener('click');
 

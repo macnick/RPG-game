@@ -28,7 +28,7 @@ class BattleScene extends Phaser.Scene {
       630,
       200,
       'kn2',
-      57,
+      null,
       'Knight',
       130,
       20
@@ -39,7 +39,7 @@ class BattleScene extends Phaser.Scene {
       630,
       340,
       'kn3',
-      141,
+      null,
       'Beast',
       120,
       30
@@ -151,7 +151,7 @@ class BattleScene extends Phaser.Scene {
   endBattle(result) {
     // update score
     console.log(this.heroes);
-    let { score } = this.sys.game.globals.model;
+    let score = this.sys.game.globals.model.score;
     score += this.enemies.length * 10 + this.heroes.length * 10;
     this.sys.game.globals.model.score = score;
     // clear state, remove sprites
@@ -237,10 +237,7 @@ const PlayerCharacter = new Phaser.Class({
     damage
   ) {
     Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
-    // flip the image so I don"t have to edit it manually
     this.flipX = true;
-
-    // this.setScale(1.1);
   },
 });
 
