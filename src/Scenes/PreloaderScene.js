@@ -17,6 +17,14 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('kn1', 'assets/images/Knight_01.png');
     this.load.image('kn2', 'assets/images/Knight_02.png');
     this.load.image('kn3', 'assets/images/Knight_03.png');
+    this.load.spritesheet(
+      'player',
+      'assets//images/RPGCharacterSprites32x32.png',
+      {
+        frameWidth: 32,
+        frameHeight: 32,
+      }
+    );
 
     this.load.spritesheet('and', 'assets/images/andromalius-57x88.png', {
       frameWidth: 57,

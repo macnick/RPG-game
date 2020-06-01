@@ -148,8 +148,9 @@ Use your terminal and run the commands after each instruction.
 ## Acknowlegements
 
 - Dark Forest Background image By Zeyu Ren 任泽宇
-- Button image by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
+- Button and enemy images by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
 - Title image created using [textcraft.net](https://textcraft.net)
+- Player images by [craftpix.net](https://craftpix.net/)
 
 [Up](#Table-of-Contents)
 

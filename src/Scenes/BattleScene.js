@@ -240,7 +240,7 @@ const PlayerCharacter = new Phaser.Class({
     // flip the image so I don"t have to edit it manually
     this.flipX = true;
 
-    this.setScale(1.1);
+    // this.setScale(1.1);
   },
 });
 
