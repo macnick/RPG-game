@@ -53,8 +53,6 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'LeaderBoard',
       'LeaderBoard',
-      // 'Victory'
-      // 'GameOver'
     );
 
     this.model = this.sys.game.globals.model;
