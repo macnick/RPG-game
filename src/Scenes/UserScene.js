@@ -16,7 +16,7 @@ export default class UserScene extends Phaser.Scene {
     this.add.image(400, 100, 'title');
 
 
-    this.add.text(270, 200, 'Please enter your name macn', {
+    this.add.text(270, 200, 'Please enter your name mac', {
       color: 'white',
       fontSize: '20px ',
     });

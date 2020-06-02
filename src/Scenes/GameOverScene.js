@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import config from '../Config/config';
 import { putScore } from '../leaderBoard';
@@ -16,20 +17,16 @@ export default class GameOverScene extends Phaser.Scene {
     this.back = this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
 
-    const text = this.add
-      .text(400, 200, 'Game Over', {
-        color: 'white',
-        fontSize: '32px ',
-        fontFamily: 'Georgia',
-      })
-      .setOrigin(0.5, 0.5);
+    this.add.text(400, 200, 'Game Over', {
+      color: 'white',
+      fontSize: '32px ',
+      fontFamily: 'Georgia',
+    }).setOrigin(0.5, 0.5);
 
-    const score = this.add
-      .text(400, 300, `Score: ${this.sys.game.globals.model.score}`, {
-        color: 'white',
-        fontSize: '32px ',
-      })
-      .setOrigin(0.5, 0.5);
+    this.add.text(400, 300, `Score: ${this.sys.game.globals.model.score}`, {
+      color: 'white',
+      fontSize: '32px ',
+    }).setOrigin(0.5, 0.5);
 
     putScore(this.model.userName, this.model.score);
 
@@ -37,12 +34,10 @@ export default class GameOverScene extends Phaser.Scene {
     const btn = this.add.dom(390, 400, 'button', style, 'Menu');
     btn.addListener('click');
 
-    btn.on('click', (event) => {
+    btn.on('click', () => {
       this.model = this.sys.game.globals.model;
       this.model.score = 0;
       this.scene.start('Title');
     });
   }
-
-  ready() {}
 }
