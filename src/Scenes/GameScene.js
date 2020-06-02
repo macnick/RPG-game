@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 
 export default class GameScene extends Phaser.Scene {
@@ -8,7 +9,7 @@ export default class GameScene extends Phaser.Scene {
   create() {
     const map = this.make.tilemap({ key: 'map' });
     const tiles = map.addTilesetImage('forest_tileset-32x32', 'tiles');
-    const grass = map.createStaticLayer('Grass', tiles, 0, 0);
+    map.createStaticLayer('Grass', tiles, 0, 0);
     const obstacles = map.createStaticLayer('Obstacles', tiles, 0, 0);
     obstacles.setCollisionByExclusion([-1]);
     this.updateScore();
@@ -93,7 +94,7 @@ export default class GameScene extends Phaser.Scene {
       [440, 600],
       [360, 740],
     ];
-    dangerZones.forEach(([x, y], i) => {
+    dangerZones.forEach(([x, y]) => {
       this.spawns.create(x, y, 96, 96);
     });
 
@@ -136,11 +137,10 @@ export default class GameScene extends Phaser.Scene {
   }
 
   onExit() {
-    console.log('on Exit');
     this.scene.start('Victory');
   }
 
-  update(time, delta) {
+  update() {
     this.player.body.setVelocity(0);
 
     // Horizontal movement
