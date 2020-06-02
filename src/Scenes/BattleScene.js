@@ -76,7 +76,6 @@ class BattleScene extends Phaser.Scene {
       this.add.existing(and);
     }
 
-    // array with heroes
     this.heroes = [warrior, knight, beast];
 
     // array with both parties, who will attack
