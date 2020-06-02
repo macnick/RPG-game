@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import config from '../Config/config';
 import { putScore } from '../leaderBoard';
@@ -54,5 +55,5 @@ export default class VictoryScene extends Phaser.Scene {
     });
   }
 
-  ready() {}
+  ready() { }
 }
