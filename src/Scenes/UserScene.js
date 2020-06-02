@@ -16,13 +16,13 @@ export default class UserScene extends Phaser.Scene {
     this.add.image(400, 100, 'title');
 
 
-    this.add.text(270, 200, 'Please enter your name', {
+    this.add.text(270, 200, 'Please enter your name macnick', {
       color: 'white',
       fontSize: '20px ',
     });
-    this.add.text(700, 560, 'v.1.0.4ab', {
-      color: 'white',
-      fontSize: '11px',
+    this.add.text(700, 560, 'v.1.0.4b', {
+      color: '#fff',
+      fontSize: '10px',
     });
 
     const input = this.add.dom(400, 300, 'input', {
