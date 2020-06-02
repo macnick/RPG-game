@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import config from '../Config/config';
 import Button from '../Objects/Button';
@@ -53,8 +54,6 @@ export default class TitleScene extends Phaser.Scene {
       'btn',
       'LeaderBoard',
       'LeaderBoard',
-      // 'Victory'
-      // 'GameOver'
     );
 
     this.model = this.sys.game.globals.model;

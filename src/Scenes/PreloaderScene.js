@@ -1,11 +1,10 @@
+/* eslint-disable no-undef */
 import 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
     super('Preloader');
   }
-
-  init() {}
 
   preload() {
     this.add.image(400, 300, 'background');
@@ -89,7 +88,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // update progress bar
     this.load.on('progress', (value) => {
-      percentText.setText(`${parseInt(value * 100)}%`);
+      percentText.setText(`${+(value * 100)}%`);
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);

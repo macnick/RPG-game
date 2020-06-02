@@ -9,8 +9,8 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'project.bundle.js',
   },
 
   module: {
@@ -40,18 +40,18 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'build'),
   },
 
   plugins: [
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, 'index.html'),
-        to: path.resolve(__dirname, 'dist'),
+        to: path.resolve(__dirname, 'build'),
       },
       {
         from: path.resolve(__dirname, 'assets', '**', '*'),
-        to: path.resolve(__dirname, 'dist'),
+        to: path.resolve(__dirname, 'build'),
       },
     ]),
     new webpack.DefinePlugin({

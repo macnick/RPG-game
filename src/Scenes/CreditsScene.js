@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import 'phaser';
 import config from '../Config/config';
 
@@ -50,7 +51,7 @@ export default class CreditsScene extends Phaser.Scene {
     const btn = this.add.dom(390, 490, 'button', btnStyle, 'Menu');
     btn.addListener('click');
 
-    btn.on('click', (event) => {
+    btn.on('click', () => {
       this.model = this.sys.game.globals.model;
       this.model.score = 0;
       this.scene.start('Title');

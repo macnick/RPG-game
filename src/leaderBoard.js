@@ -48,4 +48,4 @@ const getScores = async () => {
   return scores.result;
 };
 
-export { putScore, getScores };
+export { putScore, getScores, createGame };
