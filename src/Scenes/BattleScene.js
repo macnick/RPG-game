@@ -147,21 +147,18 @@ class BattleScene extends Phaser.Scene {
     let { score } = this.sys.game.globals.model;
     score += this.enemies.length * 10 + this.heroes.length * 10;
     this.sys.game.globals.model.score = score;
-    // clear state, remove sprites
+
     this.heroes.length = 0;
     this.enemies.length = 0;
     for (let i = 0; i < this.units.length; i += 1) {
-      // link item
       this.units[i].destroy();
     }
     this.units.length = 0;
     this.index = -1;
 
-    // sleep the UI
     if (result === 'gameOver') {
       this.scene.stop('Game');
       this.scene.sleep('UIScene');
-      // this.scene.start('GameOver'); // maybe switch GameOver ?
       this.scene.switch('GameOver');
     } else if (result === 'victory') {
       this.scene.sleep('UIScene');
@@ -170,7 +167,6 @@ class BattleScene extends Phaser.Scene {
   }
 }
 
-// base class for heroes and enemies
 const Unit = new Phaser.Class({
   Extends: Phaser.GameObjects.Sprite,
 
@@ -178,15 +174,15 @@ const Unit = new Phaser.Class({
     Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
     this.type = type;
     this.hp = hp;
-    this.damage = damage; // default damage
+    this.damage = damage;
     this.living = true;
     this.menuItem = null;
   },
-  // we will use this to notify the menu item when the unit is dead
+
   setMenuItem(item) {
     this.menuItem = item;
   },
-  // attack the target unit
+
   attack(target) {
     if (target.living) {
       target.takeDamage(this.damage);
@@ -253,7 +249,7 @@ const MenuItem = new Phaser.Class({
   deselect() {
     this.setColor('#ffffff');
   },
-  // when the associated enemy or player unit is killed
+
   unitKilled() {
     this.active = false;
     this.visible = false;
