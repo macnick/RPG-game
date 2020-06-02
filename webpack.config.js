@@ -6,13 +6,11 @@ module.exports = {
   mode: 'development',
   entry: {
     app: './src/index.js',
-    // 'production-dependencies': ['phaser'],
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/build/',
-    filename: 'project.bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.bundle.js',
   },
 
   module: {
@@ -31,47 +29,34 @@ module.exports = {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
     ],
   },
+
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
+    contentBase: path.resolve(__dirname, 'dist'),
   },
+
   plugins: [
-    new webpack.DefinePlugin({
-      CANVAS_RENDERER: JSON.stringify(true),
-      WEBGL_RENDERER: JSON.stringify(true),
-    }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, './index.html'),
-        to: path.resolve(__dirname, 'build'),
+        from: path.resolve(__dirname, 'index.html'),
+        to: path.resolve(__dirname, 'dist'),
       },
       {
         from: path.resolve(__dirname, 'assets', '**', '*'),
-        to: path.resolve(__dirname, 'build'),
+        to: path.resolve(__dirname, 'dist'),
       },
     ]),
+    new webpack.DefinePlugin({
+      'typeof CANVAS_RENDERER': JSON.stringify(true),
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
+    }),
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 6,
-      maxInitialRequests: 4,
-      automaticNameDelimiter: '~',
-      cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-        },
-      },
-    },
-  },
 };

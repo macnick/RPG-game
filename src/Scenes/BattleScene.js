@@ -123,7 +123,6 @@ class BattleScene extends Phaser.Scene {
     }
   }
 
-  // check for game over or victory
   checkEndBattle() {
     let victory = true;
     // if all enemies are dead we have victory
