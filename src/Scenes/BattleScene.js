@@ -80,10 +80,18 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
-
+    this.showHealth();
     this.units = this.heroes.concat(this.enemies);
     this.index = -1; // currently active unit
     this.scene.run('UIScene');
+  }
+
+  // Experiment with health
+  showHealth() {
+    this.heroes.forEach((hero, i) => {
+      this.add.text(615, (86 + i * 140), '   ', { backgroundColor: '#a11' });
+      this.add.text(615, (86 + i * 140), hero.hp, { backgroundColor: '#a11' });
+    });
   }
 
   nextTurn() {
@@ -106,6 +114,7 @@ class BattleScene extends Phaser.Scene {
         r = Math.floor(Math.random() * this.heroes.length);
       } while (!this.heroes[r].living);
       this.units[this.index].attack(this.heroes[r]);
+      this.showHealth(); // experiment health
       this.time.addEvent({
         delay: 2300,
         callback: this.nextTurn,
