@@ -5,8 +5,4 @@ describe('The scores should be set and reset', () => {
     Model.score = 60;
     expect(Model.score).toBe(60);
   })
-  it('Should reset the score', () => {
-    Model.resetScore();
-    expect(Model.score).toBe(0);
-  })
 })

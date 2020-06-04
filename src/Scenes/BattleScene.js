@@ -155,7 +155,7 @@ class BattleScene extends Phaser.Scene {
       this.showEnemyHealth();
     }
     this.time.addEvent({
-      delay: 3000,
+      delay: 2500,
       callback: this.nextTurn,
       callbackScope: this,
     });

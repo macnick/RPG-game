@@ -20,7 +20,7 @@ export default class UserScene extends Phaser.Scene {
       color: 'white',
       fontSize: '20px ',
     });
-    this.add.text(700, 560, 'v.1.0.4j', {
+    this.add.text(700, 560, 'v.1.0.4k', {
       color: '#fff',
       fontSize: '12px',
     });
