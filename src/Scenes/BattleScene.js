@@ -95,8 +95,8 @@ class BattleScene extends Phaser.Scene {
   }
   showEnemyHealth() {
     this.enemies.forEach((enemy, i) => {
-      this.add.text(60, (86 + i * 70), '   ', { backgroundColor: '#a11' });
-      this.add.text(60, (86 + i * 70), enemy.hp, { backgroundColor: '#a11' });
+      this.add.text(50, (86 + i * 70), '   ', { backgroundColor: '#a11' });
+      this.add.text(50, (86 + i * 70), enemy.hp, { backgroundColor: '#a11' });
     })
   }
   // End of experiment

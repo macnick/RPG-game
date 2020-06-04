@@ -1,6 +1,6 @@
 import { putScore, getScores } from '../leaderBoard';
 
-describe('The scores should be written and read', () => {
+describe('The scores should be written and read from the API', () => {
   it('Should post the score', () => {
     putScore('macnick', 100).then(data => {
       expect(data).toBe("Leaderboard score created correctly.");
