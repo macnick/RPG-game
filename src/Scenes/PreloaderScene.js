@@ -9,9 +9,7 @@ export default class PreloaderScene extends Phaser.Scene {
   preload() {
     this.add.image(400, 300, 'background');
     this.add.image(400, 100, 'title');
-    // this.load.image('tiles', 'assets/images/map/spritesheet.png');
     this.load.image('tiles', 'assets/images/map/forest_tileset-32x32.png');
-    // this.load.tilemapTiledJSON('map', 'assets/images/map/map.json');
     this.load.tilemapTiledJSON('map', 'assets/images/map/dark_forest.json');
     this.load.image('kn1', 'assets/images/Knight_01.png');
     this.load.image('kn2', 'assets/images/Knight_02.png');
@@ -111,7 +109,6 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // load assets needed in our game
     this.load.image('btn', 'assets/ui/button_small.png');
-    this.load.image('phaserLogo', 'assets/logo.png');
     this.load.image('box', 'assets/ui/grey_box.png');
     this.load.image('checkedBox', 'assets/ui/blue_boxCheckmark.png');
     this.load.audio('bgMusic', ['assets/heroism.mp3']);
