@@ -42,7 +42,7 @@ export default class VictoryScene extends Phaser.Scene {
 
     btn.on('click', () => {
       this.model = this.sys.game.globals.model;
-      this.model.score = 0;
+      this.model.resetScore();
       this.scene.start('Title');
     });
   }

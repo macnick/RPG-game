@@ -24,7 +24,7 @@ class BattleScene extends Phaser.Scene {
       'kn1',
       null,
       'Warrior',
-      125,
+      130,
       25,
     );
     this.add.existing(warrior);
@@ -35,7 +35,7 @@ class BattleScene extends Phaser.Scene {
       'kn2',
       null,
       'Knight',
-      130,
+      135,
       20,
     );
     this.add.existing(knight);
@@ -46,7 +46,7 @@ class BattleScene extends Phaser.Scene {
       'kn3',
       null,
       'Beast',
-      120,
+      125,
       30,
     );
     this.add.existing(beast);
@@ -66,7 +66,7 @@ class BattleScene extends Phaser.Scene {
       25,
     );
 
-    this.allEnemies = [gnu, and, mage1, mage2, mage3];
+    this.allEnemies = [and, mage1, mage2, gnu, mage3];
 
     this.enemies = this.allEnemies.filter((enemy) => {
       if (Math.random() > 0.45) {
@@ -93,6 +93,13 @@ class BattleScene extends Phaser.Scene {
       this.add.text(615, (86 + i * 140), hero.hp, { backgroundColor: '#a11' });
     });
   }
+  showEnemyHealth() {
+    this.enemies.forEach((enemy, i) => {
+      this.add.text(60, (86 + i * 70), '   ', { backgroundColor: '#a11' });
+      this.add.text(60, (86 + i * 70), enemy.hp, { backgroundColor: '#a11' });
+    })
+  }
+  // End of experiment
 
   nextTurn() {
     if (this.checkEndBattle()) {
@@ -108,6 +115,7 @@ class BattleScene extends Phaser.Scene {
     if (this.units[this.index] instanceof PlayerCharacter) {
       // console.log(this.units[this.index].hp);
       this.events.emit('PlayerSelect', this.index);
+      // this.showEnemyHealth(); //experiment health
     } else {
       let r;
       do {
@@ -144,6 +152,7 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
+      this.showEnemyHealth();
     }
     this.time.addEvent({
       delay: 3000,
@@ -153,9 +162,8 @@ class BattleScene extends Phaser.Scene {
   }
 
   endBattle(result) {
-    let { score } = this.sys.game.globals.model;
-    score += this.enemies.length * 10 + this.heroes.length * 10;
-    this.sys.game.globals.model.score = score;
+
+    this.updateScore(this.enemies.length, this.heroes.length);
 
     this.heroes.length = 0;
     this.enemies.length = 0;
@@ -173,6 +181,12 @@ class BattleScene extends Phaser.Scene {
       this.scene.sleep('UIScene');
       this.scene.switch('Game');
     }
+  }
+
+  updateScore(e, h) {
+    let { score } = this.sys.game.globals.model;
+    score += (e + h) * 10;
+    this.sys.game.globals.model.score = score;
   }
 }
 
