@@ -80,7 +80,7 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
-    this.showHealth();
+    // this.showHealth();
     this.units = this.heroes.concat(this.enemies);
     this.index = -1; // currently active unit
     this.scene.run('UIScene');
@@ -114,7 +114,6 @@ class BattleScene extends Phaser.Scene {
       }
     } while (!this.units[this.index].living);
     if (this.units[this.index] instanceof PlayerCharacter) {
-      // console.log(this.units[this.index].hp);
       this.events.emit('PlayerSelect', this.index);
       // this.showEnemyHealth(); //experiment health
     } else {
@@ -153,7 +152,7 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
-      this.showEnemyHealth();
+      // this.showEnemyHealth();
     }
     this.time.addEvent({
       delay: 2500,
