@@ -35,8 +35,7 @@ export default class GameOverScene extends Phaser.Scene {
     btn.addListener('click');
 
     btn.on('click', () => {
-      this.model = this.sys.game.globals.model;
-      this.model.score = 0;
+      this.model.resetScore();
       this.scene.start('Title');
     });
   }

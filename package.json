@@ -1,24 +1,25 @@
 {
-  "name": "phaser3-project-template-2",
+  "name": "rpg-game",
   "version": "1.0.0",
-  "description": "A Phaser 3 RPG Game",
-  "main": "src/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "test": "jest",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "npm run build && webpack-dev-server --port=8000",
-    "test": "jest"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://scottwestover@bitbucket.org/creativerendering/phaser3-template.git"
+    "url": "git+https://github.com/macnick/RPG-game.git"
   },
-  "license": "MIT",
-  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-project-template/issues"
+    "url": "https://github.com/macnick/RPG-game/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+  "homepage": "https://github.com/macnick/RPG-game#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
