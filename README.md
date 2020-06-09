@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/750e2e68-4ab7-402a-a15b-e4d553597c6d/deploy-status)](https://app.netlify.com/sites/darkforest/deploys)
+
 # JavaScript capstone project - RPG game
 
 Building a turn-based RPG game using JavaScript and Phaser game engine
