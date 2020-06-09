@@ -4,6 +4,7 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable no-use-before-define */
 import 'phaser';
+import HealthBar from '../Objects/HealthBar';
 
 class BattleScene extends Phaser.Scene {
   constructor() {
@@ -24,7 +25,7 @@ class BattleScene extends Phaser.Scene {
       'kn1',
       null,
       'Warrior',
-      130,
+      140,
       25,
     );
     this.add.existing(warrior);
@@ -35,7 +36,7 @@ class BattleScene extends Phaser.Scene {
       'kn2',
       null,
       'Knight',
-      140,
+      145,
       20,
     );
     this.add.existing(knight);
@@ -46,13 +47,13 @@ class BattleScene extends Phaser.Scene {
       'kn3',
       null,
       'Beast',
-      130,
+      135,
       30,
     );
     this.add.existing(beast);
 
     const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 170, 30);
-    const and = new Enemy(this, 80, 90, 'and', null, 'Andromalius', 70, 10);
+    const and = new Enemy(this, 80, 90, 'and', null, 'Andromalius', 60, 10);
     const mage1 = new Enemy(this, 80, 200, 'mage1', null, 'Light Mage', 80, 15);
     const mage2 = new Enemy(this, 80, 310, 'mage2', null, 'Dark Mage', 100, 20);
     const mage3 = new Enemy(
@@ -71,6 +72,8 @@ class BattleScene extends Phaser.Scene {
     this.enemies = this.allEnemies.filter((enemy) => {
       if (Math.random() > 0.45) {
         this.add.existing(enemy);
+        // this.add.existing(enemy.healthBar); // add the health bars
+        // enemy.healthBar.draw();
         return enemy;
       }
     });
@@ -80,27 +83,15 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
+<<<<<<< HEAD
     // this.showHealth();
+=======
+>>>>>>> health
     this.units = this.heroes.concat(this.enemies);
+    this.units.forEach(unit => unit.healthBar.draw());
     this.index = -1; // currently active unit
     this.scene.run('UIScene');
   }
-
-  // Experiment with health
-  showHealth() {
-    this.heroes.forEach((hero, i) => {
-      this.add.text(615, (86 + i * 140), '   ', { backgroundColor: '#a11' });
-      this.add.text(615, (86 + i * 140), hero.hp, { backgroundColor: '#a11' });
-    });
-  }
-
-  showEnemyHealth() {
-    this.enemies.forEach((enemy, i) => {
-      this.add.text(50, (86 + i * 70), '   ', { backgroundColor: '#a11' });
-      this.add.text(50, (86 + i * 70), enemy.hp, { backgroundColor: '#a11' });
-    });
-  }
-  // End of experiment
 
   nextTurn() {
     if (this.checkEndBattle()) {
@@ -115,14 +106,16 @@ class BattleScene extends Phaser.Scene {
     } while (!this.units[this.index].living);
     if (this.units[this.index] instanceof PlayerCharacter) {
       this.events.emit('PlayerSelect', this.index);
-      // this.showEnemyHealth(); //experiment health
     } else {
       let r;
       do {
         r = Math.floor(Math.random() * this.heroes.length);
       } while (!this.heroes[r].living);
       this.units[this.index].attack(this.heroes[r]);
-      this.showHealth(); // experiment health
+      const hero = this.heroes[r];
+      hero.healthBar.decrease(100 * (hero.hp / hero.maxHp));
+      hero.healthBar.draw();
+
       this.time.addEvent({
         delay: 2300,
         callback: this.nextTurn,
@@ -152,7 +145,13 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
+<<<<<<< HEAD
       // this.showEnemyHealth();
+=======
+      const enemy = this.enemies[target];
+      enemy.healthBar.decrease(100 * (enemy.hp / enemy.maxHp));
+      enemy.healthBar.draw();
+>>>>>>> health
     }
     this.time.addEvent({
       delay: 2500,
@@ -195,6 +194,7 @@ const Unit = new Phaser.Class({
   initialize: function Unit(scene, x, y, texture, frame, type, hp, damage) {
     Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
     this.type = type;
+    this.maxHp = hp;
     this.hp = hp;
     this.damage = damage;
     this.living = true;
@@ -222,6 +222,7 @@ const Unit = new Phaser.Class({
       this.living = false;
       this.visible = false;
       this.menuItem = null;
+      this.healthBar.rem();
     }
   },
 });
@@ -231,8 +232,10 @@ const Enemy = new Phaser.Class({
 
   initialize: function Enemy(scene, x, y, texture, frame, type, hp, damage) {
     Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
+    this.healthBar = new HealthBar(scene, x - 40, y + 50);
   },
 });
+
 
 const PlayerCharacter = new Phaser.Class({
   Extends: Unit,
@@ -249,6 +252,7 @@ const PlayerCharacter = new Phaser.Class({
   ) {
     Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
     this.flipX = true;
+    this.healthBar = new HealthBar(scene, x - 45, y + 30);
   },
 });
 
