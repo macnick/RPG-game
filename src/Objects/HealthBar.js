@@ -1,4 +1,6 @@
-const Green = '#0f0'
+/* eslint-disable no-undef */
+
+import 'phaser';
 
 export default class HealthBar {
   constructor(scene, x, y) {
@@ -7,7 +9,6 @@ export default class HealthBar {
     this.y = y;
     this.value = 100;
     this.p = 75 / 100;
-    // this.draw();
     scene.add.existing(this.bar);
   }
 
@@ -32,13 +33,13 @@ export default class HealthBar {
 
     if (this.value < 25) {
       this.bar.fillStyle(0xff0000);
-    }
-    else {
+    } else {
       this.bar.fillStyle(0x00ff00);
     }
-    var d = Math.floor(this.p * this.value);
+    const d = Math.floor(this.p * this.value);
     this.bar.fillRect(this.x + 2, this.y + 2, d, 12);
   }
+
   rem() {
     this.bar.destroy();
   }

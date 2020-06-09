@@ -4,7 +4,6 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable no-use-before-define */
 import 'phaser';
-// import Health from '../PhaserHealth';
 import HealthBar from '../Objects/HealthBar';
 
 class BattleScene extends Phaser.Scene {
@@ -103,16 +102,14 @@ class BattleScene extends Phaser.Scene {
     } while (!this.units[this.index].living);
     if (this.units[this.index] instanceof PlayerCharacter) {
       this.events.emit('PlayerSelect', this.index);
-
     } else {
       let r;
       do {
         r = Math.floor(Math.random() * this.heroes.length);
       } while (!this.heroes[r].living);
       this.units[this.index].attack(this.heroes[r]);
-      let hero = this.heroes[r];
-      console.log('maxHP:', hero.maxHp, 'hp left:', hero.hp);
-      hero.healthBar.decrease(75 * hero.hp / hero.maxHp);
+      const hero = this.heroes[r];
+      hero.healthBar.decrease(100 * (hero.hp / hero.maxHp));
       hero.healthBar.draw();
 
       this.time.addEvent({
@@ -144,8 +141,8 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
-      let enemy = this.enemies[target];
-      enemy.healthBar.decrease(75 * enemy.hp/ enemy.maxHp);
+      const enemy = this.enemies[target];
+      enemy.healthBar.decrease(100 * (enemy.hp / enemy.maxHp));
       enemy.healthBar.draw();
     }
     this.time.addEvent({
