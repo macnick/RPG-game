@@ -69,15 +69,12 @@ class BattleScene extends Phaser.Scene {
     );
 
     this.allEnemies = [and, mage1, mage2, gnu, mage3];
-    // Try health component
-    // Health.AddTo(gnu, 170, 170);
-    // Health.MixinTo(PlayerCharacter);
-
-    // Health component
 
     this.enemies = this.allEnemies.filter((enemy) => {
       if (Math.random() > 0.45) {
         this.add.existing(enemy);
+        // this.add.existing(enemy.healthBar); // add the health bars
+        // enemy.healthBar.draw();
         return enemy;
       }
     });
@@ -87,27 +84,11 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
-    // this.showHealth();
     this.units = this.heroes.concat(this.enemies);
+    this.units.forEach(unit => unit.healthBar.draw());
     this.index = -1; // currently active unit
     this.scene.run('UIScene');
   }
-
-  // Experiment with health
-  showHealth() {
-    this.heroes.forEach((hero, i) => {
-      this.add.text(615, (86 + i * 140), '   ', { backgroundColor: '#a11' });
-      this.add.text(615, (86 + i * 140), hero.hp, { backgroundColor: '#a11' });
-    });
-  }
-
-  showEnemyHealth() {
-    this.enemies.forEach((enemy, i) => {
-      this.add.text(50, (86 + i * 70), '   ', { backgroundColor: '#a11' });
-      this.add.text(50, (86 + i * 70), enemy.hp, { backgroundColor: '#a11' });
-    });
-  }
-  // End of experiment
 
   nextTurn() {
     if (this.checkEndBattle()) {
@@ -121,7 +102,6 @@ class BattleScene extends Phaser.Scene {
       }
     } while (!this.units[this.index].living);
     if (this.units[this.index] instanceof PlayerCharacter) {
-      // console.log(this.units[this.index].hp);
       this.events.emit('PlayerSelect', this.index);
 
     } else {
@@ -130,12 +110,9 @@ class BattleScene extends Phaser.Scene {
         r = Math.floor(Math.random() * this.heroes.length);
       } while (!this.heroes[r].living);
       this.units[this.index].attack(this.heroes[r]);
-      this.showHealth(); // experiment health
       let hero = this.heroes[r];
-      let foe = this.units[this.index];
-      let dec = 75 - (75 * (hero.hp - foe.damage) / hero.hp);
-      console.log(dec, foe.damage);
-      hero.healthBar.decrease(75 - (75 * (hero.hp - foe.damage) / hero.hp));
+      console.log('maxHP:', hero.maxHp, 'hp left:', hero.hp);
+      hero.healthBar.decrease(75 * hero.hp / hero.maxHp);
       hero.healthBar.draw();
 
       this.time.addEvent({
@@ -167,9 +144,9 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
-      // this.showEnemyHealth();
-      this.enemies[target].healthBar.decrease(10);
-      this.enemies[target].healthBar.draw();
+      let enemy = this.enemies[target];
+      enemy.healthBar.decrease(75 * enemy.hp/ enemy.maxHp);
+      enemy.healthBar.draw();
     }
     this.time.addEvent({
       delay: 2500,
@@ -212,6 +189,7 @@ const Unit = new Phaser.Class({
   initialize: function Unit(scene, x, y, texture, frame, type, hp, damage) {
     Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
     this.type = type;
+    this.maxHp = hp;
     this.hp = hp;
     this.damage = damage;
     this.living = true;
@@ -239,6 +217,7 @@ const Unit = new Phaser.Class({
       this.living = false;
       this.visible = false;
       this.menuItem = null;
+      this.healthBar.rem();
     }
   },
 });

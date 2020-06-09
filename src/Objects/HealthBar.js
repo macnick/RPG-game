@@ -1,23 +1,5 @@
 const Green = '#0f0'
 
-// export default class HealthBar {
-//   constructor(scene, x, y, width, height) {
-//     this.bg = scene.add.rectangle(x, y, width + 2, height + 2, 0, 0.6)
-//       .setOrigin(0, 0);
-
-//     this.bar = scene.add.rectangle(x + 1, y + 1, width, height, Green)
-//       .setOrigin(0, 0);
-//   }
-
-//   add(target) {
-//     target.on('healthchange', this.draw, this);
-//   }
-
-//   draw(target, change, health, max) {
-//     this.bar.displayWidth = Math.max(0, health);
-//   }
-// }
-
 export default class HealthBar {
   constructor(scene, x, y) {
     this.bar = new Phaser.GameObjects.Graphics(scene);
@@ -25,12 +7,12 @@ export default class HealthBar {
     this.y = y;
     this.value = 100;
     this.p = 75 / 100;
-    this.draw();
+    // this.draw();
     scene.add.existing(this.bar);
   }
 
   decrease(amount) {
-    this.value -= amount;
+    this.value = amount; // amount is now the value we are not decreasing, just setting the val
     if (this.value < 0) {
       this.value = 0;
     }
@@ -48,7 +30,7 @@ export default class HealthBar {
     this.bar.fillStyle(0xffffff);
     this.bar.fillRect(this.x + 2, this.y + 2, 75, 12);
 
-    if (this.value < 30) {
+    if (this.value < 25) {
       this.bar.fillStyle(0xff0000);
     }
     else {
@@ -57,5 +39,7 @@ export default class HealthBar {
     var d = Math.floor(this.p * this.value);
     this.bar.fillRect(this.x + 2, this.y + 2, d, 12);
   }
-
+  rem() {
+    this.bar.destroy();
+  }
 }
