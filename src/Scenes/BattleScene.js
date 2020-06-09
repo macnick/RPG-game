@@ -83,10 +83,6 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
-<<<<<<< HEAD
-    // this.showHealth();
-=======
->>>>>>> health
     this.units = this.heroes.concat(this.enemies);
     this.units.forEach(unit => unit.healthBar.draw());
     this.index = -1; // currently active unit
@@ -145,13 +141,9 @@ class BattleScene extends Phaser.Scene {
   receivePlayerSelection(action, target) {
     if (action === 'attack') {
       this.units[this.index].attack(this.enemies[target]);
-<<<<<<< HEAD
-      // this.showEnemyHealth();
-=======
       const enemy = this.enemies[target];
       enemy.healthBar.decrease(100 * (enemy.hp / enemy.maxHp));
       enemy.healthBar.draw();
->>>>>>> health
     }
     this.time.addEvent({
       delay: 2500,
