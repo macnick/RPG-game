@@ -18,11 +18,11 @@ class BattleScene extends Phaser.Scene {
   }
 
   startBattle() {
-    const warrior = new PlayerCharacter(this,630,60,'kn1',null,'Warrior', 140, 25);
+    const warrior = new PlayerCharacter(this, 630, 60, 'kn1', null, 'Warrior', 140, 25);
     this.add.existing(warrior);
-    const knight = new PlayerCharacter(this,630,200,'kn2',null,'Knight', 145, 20);
+    const knight = new PlayerCharacter(this, 630, 200, 'kn2', null, 'Knight', 145, 20);
     this.add.existing(knight);
-    const beast = new PlayerCharacter(this,630,340,'kn3',null,'Beast',135,30);
+    const beast = new PlayerCharacter(this, 630, 340, 'kn3', null, 'Beast', 135, 30);
     this.add.existing(beast);
 
     const gnu = new Enemy(this, 220, 130, 'gnu', null, 'Gnu Warrior', 170, 30);

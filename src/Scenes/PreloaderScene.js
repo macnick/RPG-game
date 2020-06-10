@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+/* eslint-disable no-bitwise */
 import 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {

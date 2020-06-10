@@ -82,6 +82,7 @@ export default class GameScene extends Phaser.Scene {
 
     const dangerZones = [
       [300, 64],
+      [600, 64],
       [980, 640],
       [480, 864],
       [800, 768],
