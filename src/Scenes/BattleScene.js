@@ -83,13 +83,6 @@ class BattleScene extends Phaser.Scene {
     }
 
     this.heroes = [warrior, knight, beast];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    // this.showHealth();
-=======
->>>>>>> health
->>>>>>> 66b1a2046d02d43181a901c5f18d947b18805723
     this.units = this.heroes.concat(this.enemies);
     this.units.forEach(unit => unit.healthBar.draw());
     this.index = -1; // currently active unit
