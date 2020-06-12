@@ -127,8 +127,8 @@ The six all-time best scores are listed on the LeaderBoard.
 ### Live version
 
 The game is hosted on two different servers, macexperts.gr and netlify.com. Both use the same API to store the scores so it does not matter in which one you play. You can play the game here: 
-- [**Dark Forest**](https://darkforest.netlify.app), or 
-- [**Dark Forest**](https://macexperts.gr/darkforest)
+- [**Dark Forest**](https://darkforest.netlify.app) @ netlify 
+- [**Dark Forest**](https://macexperts.gr/darkforest) @ macexperts
 
 ### How to Install and Run in Your Computer
 
