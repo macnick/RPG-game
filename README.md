@@ -147,7 +147,7 @@ Use your terminal and run the commands after each instruction.
 
 [Up](#Table-of-Contents)
 
-## Acknowlegements
+## Acknowledgements
 
 - Dark Forest Background image By Zeyu Ren 任泽宇
 - Button and enemy images by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
