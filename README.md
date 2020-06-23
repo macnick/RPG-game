@@ -13,7 +13,7 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 - [Technologies Used](#Technologies-Used)
 - [Live Version](#Live-version)
 - [Install and Run](#How-to-Install-and-Run-in-Your-Computer)
-- [Acknowledgements](#Acknowlegements)
+- [Acknowledgments](#Acknowledgments)
 
 ### Objective
 
@@ -51,13 +51,13 @@ If you reach the other end of the forest you are victorious and you can go on to
 <img src="assets/screens/input.png">
 </p>
 
-Enter you name or avatar in the first screen and click on 'Play Now' button.
+Enter your name or avatar on the first screen and click on 'Play Now' button.
 
 <p align="center">
 <img src="assets/screens/menu.png">
 </p>
 
-Next screen is here you control the game. You have 4 options:
+Next screen is where you control the game. You have 4 options:
 
 2. #### Play
 
