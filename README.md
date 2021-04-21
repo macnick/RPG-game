@@ -2,7 +2,7 @@
 
 # JavaScript capstone project - RPG game
 
-Building a turn-based RPG game using JavaScript and Phaser game engine
+Building a turn-based RPG game using JavaScript and Phaser game engine.
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 
 ### Objective
 
-The objective of this project is to build a simple turn-based RPG game with a scoring system, using JavaScript ES6, Phaser 3 framework, and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to design the story, the gameplay, the scenes, and the scoring system.
+The objective of this project is to build a simple turn-based RPG game with a scoring system, using JavaScript ES6, Phaser 3 framework, and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to come up with the story, design the gameplay, the scenes, and the scoring system.
 
 [Up](#Table-of-Contents)
 
