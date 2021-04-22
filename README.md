@@ -31,7 +31,7 @@ Passing the forest will be difficult and risky. It is known that various monster
 
 ### Gameplay
 
-You control a character on the screen which represents your team. You start on the top left corner and you have to navigate through the map to find the exit of the forest.
+Use the arrow keys to control a character on the screen which represents your team. You start on the top left corner and you have to navigate through the map to find the exit of the forest.
 
 You will get attacked by a varying number of different enemies during your journey. These are randomly chosen by the game.
 
