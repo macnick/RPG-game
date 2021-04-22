@@ -2,7 +2,7 @@
 
 # JavaScript capstone project - RPG game
 
-Building a turn-based RPG game using JavaScript and Phaser game engine
+Building a turn-based RPG game using JavaScript and Phaser game engine.
 
 ## Table of Contents
 
@@ -13,11 +13,11 @@ Building a turn-based RPG game using JavaScript and Phaser game engine
 - [Technologies Used](#Technologies-Used)
 - [Live Version](#Live-version)
 - [Install and Run](#How-to-Install-and-Run-in-Your-Computer)
-- [Acknowledgements](#Acknowlegements)
+- [Acknowledgments](#Acknowledgments)
 
 ### Objective
 
-The objective of this project is to build a simple turn-based RPG game with a scoring system, using JavaScript ES6, Phaser 3 framework, and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to design the story, the gameplay, the scenes, and the scoring system.
+The objective of this project is to build a simple turn-based RPG game with a scoring system, using JavaScript ES6, Phaser 3 framework, and other modern technologies. See [technologies used](#Technologies-Used) for more info. I had to come up with the story, design the gameplay, the scenes, and the scoring system.
 
 [Up](#Table-of-Contents)
 
@@ -51,13 +51,13 @@ If you reach the other end of the forest you are victorious and you can go on to
 <img src="assets/screens/input.png">
 </p>
 
-Enter you name or avatar in the first screen and click on 'Play Now' button.
+Enter your name or avatar on the first screen and click on 'Play Now' button.
 
 <p align="center">
 <img src="assets/screens/menu.png">
 </p>
 
-Next screen is here you control the game. You have 4 options:
+Next screen is where you control the game. You have 4 options:
 
 2. #### Play
 
@@ -126,7 +126,9 @@ The six all-time best scores are listed on the LeaderBoard.
 
 ### Live version
 
-The game is hosted on netlify.com. You can play the game here: [**Dark Forest**](https://darkforest.netlify.app)
+The game is hosted on two different servers, macexperts.gr and netlify.com. Both use the same API to store the scores so it does not matter in which one you play. You can play the game here: 
+- [**Dark Forest**](https://darkforest.netlify.app) @ netlify 
+- [**Dark Forest**](https://macexperts.gr/darkforest) @ macexperts
 
 ### How to Install and Run in Your Computer
 
@@ -145,7 +147,7 @@ Use your terminal and run the commands after each instruction.
 
 [Up](#Table-of-Contents)
 
-## Acknowlegements
+## Acknowledgements
 
 - Dark Forest Background image By Zeyu Ren 任泽宇
 - Button and enemy images by pennomi, Buch, cemkalyoncu at [opengameart.org](https://opengameart.org/)
