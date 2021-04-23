@@ -35,7 +35,7 @@ Use the arrow keys to control a character on the screen which represents your te
 
 You will get attacked by a varying number of different enemies during your journey. These are randomly chosen by the game.
 
-When attacked you enter the battle screen where you decide which enemy to attack each time. This is a turn-based RPG so each of your team members attacks only once. The same applies to the enemies when you finish attacking. The battle continues until you defeat all foes or be defeated by them.
+When attacked you enter the battle screen where you decide which enemy to attack each time. Use arrow keys again to selecy enemy. This is a turn-based RPG so each of your team members attacks only once. The same applies to the enemies when you finish attacking. The battle continues until you defeat all foes or be defeated by them.
 
 Do not worry about your health it is been restored to full after each battle.
 
