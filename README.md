@@ -33,7 +33,7 @@ Passing the forest will be difficult and risky. It is known that various monster
 
 Use the arrow keys to control a character on the screen which represents your team. You start on the top left corner and you have to navigate through the map to find the exit of the forest.
 
-You will get attacked by a varying number of different enemies during your journey. These are randomly chosen by the game.
+You will get attacked by a varying number of five different enemies during your journey. These are randomly chosen by the game. 
 
 When attacked you enter the battle screen where you decide which enemy to attack each time. Use arrow keys again to select an enemy. This is a turn-based RPG so each of your team members attacks only once. The same applies to the enemies when you finish attacking. The battle continues until you defeat all foes or be defeated by them.
 
