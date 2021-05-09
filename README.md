@@ -176,7 +176,7 @@ Feel free to check the [issues page](https://github.com/macnick/RPG-game/issues)
 
 ## Show your support
 
-A ⭐️ is always welcome, if you enjoyed this project!
+If you enjoyed this project, a ⭐️ is always welcome.
 
 ## 📝 License
 
