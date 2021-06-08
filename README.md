@@ -156,6 +156,10 @@ Use your terminal and run the commands after each instruction.
 
 [Up](#Table-of-Contents)
 
+## Upcoming features
+
+- Random enemy ambushes
+
 ## 👤 Author
 
 - Github: [@macnick](https://github.com/macnick)
