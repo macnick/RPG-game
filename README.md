@@ -158,7 +158,7 @@ Use your terminal and run the commands after each instruction.
 
 ## Upcoming features
 
-- Random enemy ambushes
+- Randomize where the enemy ambushes
 - Weighted hit power, not always the same
 
 ## 👤 Author
