@@ -159,7 +159,7 @@ Use your terminal and run the commands after each instruction.
 ## Upcoming features
 
 - Randomize where the enemy ambushes
-- Weighted hit power, not always the same
+- Weighted hit power, not always the same. Each character will have minimum and maximum hit power and will hit randomly between their limits.
 
 ## 👤 Author
 
