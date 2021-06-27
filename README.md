@@ -163,6 +163,7 @@ Use your terminal and run the commands after each instruction.
 - Player characters will not restore full power after each battle.
 - Add power-ups inside the forest to restore user power.
 - Fix the health bug.
+- Update phaser.
 
 ## 👤 Author
 
